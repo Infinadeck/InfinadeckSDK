@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Boostnote
+Comment=A note-taking app for programmers
+Exec=$SNAP/etc/boostnote/Boostnote
+Icon=resources/app.png
+MimeType=image/x-foo;
+NotShowIn=KDE;

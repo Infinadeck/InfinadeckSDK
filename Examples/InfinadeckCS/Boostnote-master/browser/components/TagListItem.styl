@@ -1,0 +1,111 @@
+.tagList-itemContainer
+  display flex
+
+.tagList-item
+  display flex
+  flex 1
+  width 100%
+  height 26px
+  background-color transparent
+  color $ui-inactive-text-color
+  padding 0
+  margin-bottom 5px
+  text-align left
+  border none
+  overflow ellipsis
+  font-size 13px
+  &:first-child
+    margin-top 0
+  &:hover
+    color $ui-button-default-color
+    background-color alpha($ui-button-default--active-backgroundColor, 20%)
+    transition background-color 0.15s
+  &:active, &:active:hover
+    color $ui-button-default-color
+    background-color $ui-button-default--active-backgroundColor
+
+.tagList-itemNarrow
+  composes tagList-item
+  flex none
+  width 20px
+  padding 0 4px
+
+.tagList-item-active
+  background-color $ui-button-default--active-backgroundColor
+  display flex
+  flex 1
+  width 100%
+  height 26px
+  padding 0
+  margin-bottom 5px
+  text-align left
+  border none
+  overflow ellipsis
+  font-size 13px
+  color $ui-button-default-color
+  &:hover
+    background-color alpha($ui-button-default--active-backgroundColor, 60%)
+    transition 0.2s
+
+.tagList-itemNarrow-active
+  composes tagList-item-active
+  flex none
+  width 20px
+  padding 0 4px
+
+.tagList-item-name
+  display block
+  flex 1
+  padding 0 8px 0 4px
+  height 26px
+  line-height 26px
+  border-width 0 0 0 2px
+  border-style solid
+  border-color transparent
+  overflow hidden
+  text-overflow ellipsis
+
+.tagList-item-count
+  float right
+  line-height 26px
+  padding-right 15px
+  font-size 13px
+
+body[data-theme="white"]
+  .tagList-item
+    color $ui-inactive-text-color
+    &:hover
+      color $ui-text-color
+      background-color alpha($ui-button--active-backgroundColor, 20%)
+    &:active
+      color $ui-text-color
+      background-color $ui-button--active-backgroundColor
+
+  .tagList-item-active
+    background-color $ui-button--active-backgroundColor
+    color $ui-text-color
+    &:hover
+      background-color alpha($ui-button--active-backgroundColor, 60%)
+  .tagList-item-count
+    color $ui-text-color
+
+body[data-theme="dark"]
+  .tagList-item
+    color $ui-dark-inactive-text-color
+    &:hover
+      color $ui-dark-text-color
+      background-color alpha($ui-dark-button--active-backgroundColor, 20%)
+    &:active
+      color $ui-dark-text-color
+      background-color $ui-dark-button--active-backgroundColor
+
+  .tagList-item-active
+    background-color $ui-dark-button--active-backgroundColor
+    color $ui-dark-text-color
+    &:active
+      background-color alpha($ui-dark-button--active-backgroundColor, 50%)
+    &:hover
+      color $ui-dark-text-color
+      background-color alpha($ui-dark-button--active-backgroundColor, 50%)
+  .tagList-item-count
+    color $ui-dark-button--active-color

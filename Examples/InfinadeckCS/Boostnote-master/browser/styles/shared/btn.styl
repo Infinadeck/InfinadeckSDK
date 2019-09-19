@@ -1,0 +1,55 @@
+.btn-primary, .btn-default
+  border-style solid
+  border-width 1px
+  background-image none
+  height 44px
+  padding 0 15px
+  border-radius 5px
+  box-sizing border-box
+  font-size 1em
+  font-family 'Lato'
+  font-weight 400
+  transition 0.1s
+  cursor pointer
+  margin 0 5px
+
+.btn-block
+  display block
+  width 100%
+  margin 0 auto
+
+.btn-square
+  display inline-block
+  width 44px
+  padding 0
+  border-width 1px
+
+.btn-sm
+  height 32px
+  border-radius 16px
+  &.btn-square
+    width 32px
+
+.btn-primary
+  border-color brandBorderColor
+  background-color transparent
+  color brandColor
+  &:hover, &.hover, &:focus, &.focus
+    border-color darken(brandBorderColor, 30%)
+    color darken(brandColor, 30%)
+  &:active, &.active
+    background-color brandColor
+    color white
+
+.btn-default
+  border-color lightButtonColor
+  background-color transparent
+  color lightButtonColor
+
+  &:hover, &.hover, &:focus, &.focus
+    border-color darken(lightButtonColor, 50%)
+    color darken(lightButtonColor, 50%)
+  &:active, &.active
+    border-color darken(brandBorderColor, 10%)
+    background-color brandColor
+    color white

@@ -1,0 +1,266 @@
+.menu
+  margin-bottom 30px
+
+.menu-button
+  navButtonColor()
+  height 36px
+  padding 0 15px 0 20px
+  font-size 14px
+  width 100%
+  text-align left
+  overflow ellipsis
+  display flex
+  align-items center
+  &:hover, &:active, &:active:hover
+    color #1EC38B
+    background-color alpha($ui-button-default--active-backgroundColor, 20%)
+
+.iconWrap
+  width 20px
+  text-align center
+
+.counters
+  float right
+  color $ui-inactive-text-color
+
+.menu-button--active
+  @extend .menu-button
+  SideNavFilter()
+  color #1EC38B
+  background-color alpha($ui-button-default--active-backgroundColor, 20%)
+  .menu-button-label, .counters
+    color #1EC38B
+  &:hover
+    color #1EC38B
+
+.menu-button-star--active
+  @extend .menu-button
+  SideNavFilter()
+  color #1EC38B
+  background-color alpha($ui-button-default--active-backgroundColor, 20%)
+  .menu-button-label, .counters
+    color #1EC38B
+
+.menu-button-trash--active
+  @extend .menu-button
+  SideNavFilter()
+  color #1EC38B
+  background-color alpha($ui-button-default--active-backgroundColor, 20%)
+  .menu-button-label, .counters
+    color #1EC38B
+
+.menu-button-label
+  margin-left 10px
+  flex 1
+
+.menu--folded
+  @extend .menu
+  .menu-button, .menu-button--active, .menu-button-star--active, .menu-button-trash--active
+    text-align center
+    padding 0 12px
+    &:hover .menu-button-label
+      transition opacity 0.15s
+      opacity 1
+      color $ui-tooltip-text-color
+      background-color $ui-tooltip-backgroundColor
+
+
+  .menu-button-label
+    position fixed
+    display inline-block
+    height 36px
+    left 44px
+    padding 0 10px
+    margin-left 0
+    overflow ellipsis
+    z-index 10
+    line-height 32px
+    border-top-right-radius 2px
+    border-bottom-right-radius 2px
+    pointer-events none
+    opacity 0
+    font-size 13px
+  .counters
+    display none
+
+body[data-theme="white"]
+  .menu-button
+    navWhiteButtonColor()
+
+  .counters
+    color $ui-inactive-text-color
+
+  .menu-button--active
+    color #e74c3c
+    background-color $ui-button--active-backgroundColor
+    .menu-button-label
+      color $ui-text-color
+    &:hover
+      background-color alpha($ui-button--active-backgroundColor, 50%)
+      color #e74c3c
+      .menu-button-label
+        color $ui-text-color
+    &:active, &:active:hover
+      background-color alpha($ui-button--active-backgroundColor, 50%)
+      color #e74c3c
+      .menu-button-label
+        color $ui-text-color
+
+  .menu-button-star--active
+    color #F9BF3B
+    background-color $ui-button--active-backgroundColor
+    .menu-button-label
+      color $ui-text-color
+    &:hover
+      background-color alpha($ui-button--active-backgroundColor, 50%)
+      color #F9BF3B
+      .menu-button-label
+        color $ui-text-color
+    &:active, &:active:hover
+      background-color alpha($ui-button--active-backgroundColor, 50%)
+      color #F9BF3B
+      .menu-button-label
+        color $ui-text-color
+
+  .menu-button-trash--active
+    color #5D9E36
+    background-color $ui-button--active-backgroundColor
+    .menu-button-label
+      color $ui-text-color
+    &:hover
+      background-color alpha($ui-button--active-backgroundColor, 50%)
+      color #5D9E36
+      .menu-button-label
+        color $ui-text-color
+    &:active, &:active:hover
+      background-color alpha($ui-button--active-backgroundColor, 50%)
+      color #5D9E36
+      .menu-button-label
+        color $ui-text-color
+
+body[data-theme="dark"]
+  .menu-button
+    &:active
+      background-color $ui-dark-button--active-backgroundColor
+      color $ui-dark-text-color
+    &:hover
+      background-color alpha($ui-dark-button--active-backgroundColor, 20%)
+      color $ui-dark-text-color
+
+  .menu-button--active
+    color #c0392b
+    background-color $ui-dark-button--active-backgroundColor
+    .menu-button-label
+      color $ui-dark-text-color
+    &:hover
+      background-color alpha($ui-dark-button--active-backgroundColor, 50%)
+      color #c0392b
+      .menu-button-label
+        color $ui-dark-text-color
+
+  .menu-button-star--active
+    color $ui-favorite-star-button-color
+    background-color $ui-dark-button--active-backgroundColor
+    .menu-button-label
+      color $ui-dark-text-color
+    &:hover
+      background-color alpha($ui-dark-button--active-backgroundColor, 50%)
+      color $ui-favorite-star-button-color
+      .menu-button-label
+        color $ui-dark-text-color
+
+  .menu-button-trash--active
+    color #5D9E36
+    background-color $ui-dark-button--active-backgroundColor
+    .menu-button-label
+      color $ui-dark-text-color
+    &:hover
+      background-color alpha($ui-dark-button--active-backgroundColor, 50%)
+      color #5D9E36
+      .menu-button-label
+        color $ui-dark-text-color
+
+
+body[data-theme="solarized-dark"]
+  .menu-button
+    &:active
+      background-color $ui-solarized-dark-noteList-backgroundColor
+      color $ui-solarized-dark-text-color
+    &:hover
+      background-color $ui-solarized-dark-button-backgroundColor
+      color $ui-solarized-dark-text-color
+
+  .menu-button--active
+    color $ui-solarized-dark-text-color
+    background-color $ui-solarized-dark-button-backgroundColor
+    .menu-button-label
+      color $ui-solarized-dark-text-color
+    &:hover
+      background-color $ui-solarized-dark-button-backgroundColor
+      color $ui-solarized-dark-text-color
+      .menu-button-label
+        color $ui-solarized-dark-text-color
+
+  .menu-button-star--active
+    color $ui-solarized-dark-text-color
+    background-color $ui-solarized-dark-button-backgroundColor
+    .menu-button-label
+      color $ui-solarized-dark-text-color
+    &:hover
+      background-color $ui-solarized-dark-button-backgroundColor
+      color $ui-solarized-dark-text-color
+      .menu-button-label
+        color $ui-solarized-dark-text-color
+
+  .menu-button-trash--active
+    color $ui-solarized-dark-text-color
+    background-color $ui-solarized-dark-button-backgroundColor
+    .menu-button-label
+      color $ui-solarized-dark-text-color
+    &:hover
+      background-color $ui-solarized-dark-button-backgroundColor
+      color $ui-solarized-dark-text-color
+      .menu-button-label
+        color $ui-solarized-dark-text-color
+
+body[data-theme="monokai"]
+  .menu-button
+    &:active
+      background-color $ui-monokai-noteList-backgroundColor
+      color $ui-monokai-text-color
+    &:hover
+      background-color $ui-monokai-button-backgroundColor
+      color $ui-monokai-text-color
+
+  .menu-button--active
+    color $ui-monokai-text-color
+    background-color $ui-monokai-button-backgroundColor
+    .menu-button-label
+      color $ui-monokai-text-color
+    &:hover
+      background-color $ui-monokai-button-backgroundColor
+      color $ui-monokai-text-color
+      .menu-button-label
+        color $ui-monokai-text-color
+
+  .menu-button-star--active
+    color $ui-monokai-text-color
+    background-color $ui-monokai-button-backgroundColor
+    .menu-button-label
+      color $ui-monokai-text-color
+    &:hover
+      background-color $ui-monokai-button-backgroundColor
+      color $ui-monokai-text-color
+      .menu-button-label
+        color $ui-monokai-text-color
+
+  .menu-button-trash--active
+    color $ui-monokai-text-color
+    background-color $ui-monokai-button-backgroundColor
+    .menu-button-label
+      color $ui-monokai-text-color
+    &:hover
+      background-color $ui-monokai-button-backgroundColor
+      color $ui-monokai-text-color
+      .menu-button-label
+        color $ui-monokai-text-color

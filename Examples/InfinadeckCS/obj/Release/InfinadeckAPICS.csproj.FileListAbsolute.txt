@@ -1,0 +1,7 @@
+C:\Users\Infinadeck\Documents\GitHub\InfinadeckAPI\InfinadeckAPITCPCS\bin\Release\InfinadeckAPITCPCS.exe.config
+C:\Users\Infinadeck\Documents\GitHub\InfinadeckAPI\InfinadeckAPITCPCS\bin\Release\InfinadeckAPITCPCS.exe
+C:\Users\Infinadeck\Documents\GitHub\InfinadeckAPI\InfinadeckAPITCPCS\bin\Release\InfinadeckAPITCPCS.pdb
+C:\Users\Infinadeck\Documents\GitHub\InfinadeckAPI\InfinadeckAPITCPCS\obj\Release\InfinadeckAPICS.csproj.CoreCompileInputs.cache
+C:\Users\Infinadeck\Documents\GitHub\InfinadeckAPI\InfinadeckAPITCPCS\obj\Release\InfinadeckAPITCPCS.exe
+C:\Users\Infinadeck\Documents\GitHub\InfinadeckAPI\InfinadeckAPITCPCS\obj\Release\InfinadeckAPITCPCS.pdb
+C:\Users\Infinadeck\Documents\GitHub\InfinadeckAPI\InfinadeckAPITCPCS\obj\Release\InfinadeckAPICS.csprojAssemblyReference.cache

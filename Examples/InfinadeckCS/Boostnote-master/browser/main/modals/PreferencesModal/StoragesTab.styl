@@ -1,0 +1,238 @@
+@import('./Tab')
+
+.root
+  padding 15px
+  color $ui-text-color
+
+.list
+  margin-bottom 15px
+  font-size 14px
+
+.folderList
+  padding 0 15px
+
+.folderList-item
+  height 30px
+  line-height 30px
+  border-bottom $ui-border
+
+.folderList-empty
+  height 30px
+  line-height 30px
+  font-size 12px
+  color $ui-inactive-text-color
+
+.list-empty
+  height 30px
+  color $ui-inactive-text-color
+.list-control
+  height 30px
+.list-control-addStorageButton
+  position absolute
+  top 7px
+  right 20px
+  height $tab--button-height
+  padding 0 15px
+  border $ui-border
+  colorDefaultButton()
+  font-size $tab--button-font-size
+  border-radius 2px
+
+.addStorage
+  margin-bottom 15px
+
+.addStorage-header
+  font-size 24px
+  color $ui-text-color
+  padding 5px
+  border-bottom $default-border
+  margin-bottom 15px
+
+.addStorage-body-section
+  margin-bottom 15px
+  display flex
+  line-height 30px
+
+.addStorage-body-section-label
+  width 150px
+  text-align right
+  margin-right 10px
+
+.addStorage-body-section-name
+  flex 1
+.addStorage-body-section-name-input
+  height 30px
+  vertical-align middle
+  width 150px
+  font-size 12px
+  border solid 1px $border-color
+  border-radius 2px
+  padding 0 5px
+
+.addStorage-body-section-type
+  flex 1
+.addStorage-body-section-type-select
+  height 30px
+.addStorage-body-section-type-description
+  margin 5px
+  font-size 12px
+  color $ui-inactive-text-color
+  line-height 16px
+
+.addStorage-body-section-path
+  flex 1
+.addStorage-body-section-path-input
+  height 30px
+  vertical-align middle
+  width 150px
+  font-size 12px
+  border-style solid
+  border-width 1px 0 1px 1px
+  border-color $border-color
+  border-top-left-radius 2px
+  border-bottom-left-radius 2px
+  padding 0 5px
+.addStorage-body-section-path-button
+  height 30px
+  border none
+  border-top-right-radius 2px
+  border-bottom-right-radius 2px
+  colorPrimaryButton()
+  vertical-align middle
+.addStorage-body-control
+  border-top $default-border
+  padding-top 10px
+  box-sizing border-box
+  height 40px
+  text-align right
+
+.addStorage-body-control-createButton
+  colorPrimaryButton()
+  border none
+  border-radius 2px
+  height 30px
+  padding 0 15px
+  margin-right 5px
+.addStorage-body-control-cancelButton
+  colorDefaultButton()
+  border $default-border
+  border-radius 2px
+  height 30px
+  padding 0 15px
+
+body[data-theme="dark"]
+  .root
+    padding 15px
+    color $ui-dark-text-color
+
+  .folderList-item
+    border-bottom $ui-dark-border
+
+  .folderList-empty
+    color $ui-dark-inactive-text-color
+
+  .list-empty
+    color $ui-dark-inactive-text-color
+  .list-control-addStorageButton
+    border-color $ui-dark-borderColor
+    colorDarkDefaultButton()
+    border-radius 2px
+
+  .addStorage-header
+    color $ui-dark-text-color
+    border-color $ui-dark-borderColor
+
+  .addStorage-body-section-name-input
+    border-color $ui-dark-borderColor
+
+  .addStorage-body-section-type-description
+    color $ui-dark-inactive-text-color
+
+  .addStorage-body-section-path-button
+    colorPrimaryButton()
+  .addStorage-body-control
+    border-color $ui-dark-borderColor
+
+  .addStorage-body-control-createButton
+    colorDarkPrimaryButton()
+  .addStorage-body-control-cancelButton
+    colorDarkDefaultButton()
+    border-color $ui-dark-borderColor
+    
+
+
+body[data-theme="solarized-dark"]
+  .root
+    color $ui-solarized-dark-text-color
+
+  .folderList-item
+    border-bottom $ui-solarized-dark-borderColor
+
+  .folderList-empty
+    color $ui-solarized-dark-text-color
+
+  .list-empty
+    color $ui-solarized-dark-text-color
+  .list-control-addStorageButton
+    border-color $ui-solarized-dark-button-backgroundColor
+    background-color $ui-solarized-dark-button-backgroundColor
+    color $ui-solarized-dark-text-color
+
+  .addStorage-header
+    color $ui-solarized-dark-text-color
+    border-color $ui-solarized-dark-borderColor
+
+  .addStorage-body-section-name-input
+    border-color $$ui-solarized-dark-borderColor
+
+  .addStorage-body-section-type-description
+    color $ui-solarized-dark-text-color
+
+  .addStorage-body-section-path-button
+    colorPrimaryButton()
+  .addStorage-body-control
+    border-color $ui-solarized-dark-borderColor
+
+  .addStorage-body-control-createButton
+    colorDarkPrimaryButton()
+  .addStorage-body-control-cancelButton
+    colorDarkDefaultButton()
+    border-color $ui-solarized-dark-borderColor
+
+body[data-theme="monokai"]
+  .root
+    color $ui-monokai-text-color
+
+  .folderList-item
+    border-bottom $ui-monokai-borderColor
+
+  .folderList-empty
+    color $ui-monokai-text-color
+
+  .list-empty
+    color $ui-monokai-text-color
+  .list-control-addStorageButton
+    border-color $ui-monokai-button-backgroundColor
+    background-color $ui-monokai-button-backgroundColor
+    color $ui-monokai-text-color
+
+  .addStorage-header
+    color $ui-monokai-text-color
+    border-color $ui-monokai-borderColor
+
+  .addStorage-body-section-name-input
+    border-color $$ui-monokai-borderColor
+
+  .addStorage-body-section-type-description
+    color $ui-monokai-text-color
+
+  .addStorage-body-section-path-button
+    colorPrimaryButton()
+  .addStorage-body-control
+    border-color $ui-monokai-borderColor
+
+  .addStorage-body-control-createButton
+    colorDarkPrimaryButton()
+  .addStorage-body-control-cancelButton
+    colorDarkDefaultButton()
+    border-color $ui-monokai-borderColor

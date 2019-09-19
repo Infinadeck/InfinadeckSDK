@@ -1,0 +1,151 @@
+.folderItem
+  height 35px
+  box-sizing border-box
+  padding 2.5px 15px
+  &:hover
+    background-color darken(white, 3%)
+
+.folderItem-drag-handle
+  height 35px
+  border none
+  padding 0 10px
+  line-height 35px
+  float left
+  cursor row-resize
+
+.folderItem-left
+  height 30px
+  border-left solid 2px transparent
+  padding 0 10px
+  line-height 30px
+  float left
+.folderItem-left-danger
+  color $danger-color
+  font-weight bold
+
+.folderItem-left-key
+  color $ui-inactive-text-color
+  font-size 13px
+  margin 0 5px
+  border none
+
+.folderItem-left-colorButton
+  colorDefaultButton()
+  height 25px
+  width 25px
+  line-height 23px
+  padding 0
+  box-sizing border-box
+  vertical-align middle
+  border $ui-border
+  border-radius 2px
+  margin-right 5px
+  margin-left -15px
+
+.folderItem-left-nameInput
+  height 25px
+  box-sizing border-box
+  vertical-align middle
+  border $ui-border
+  border-radius 2px
+  padding 0 5px
+  outline none
+
+.folderItem-right
+  float right
+
+.folderItem-right-button
+  vertical-align middle
+  height 25px
+  margin-top 2.5px
+  colorDefaultButton()
+  border-radius 2px
+  border $ui-border
+  margin-right 5px
+  padding 0 5px
+  &:last-child
+    margin-right 0
+
+.folderItem-right-confirmButton
+  @extend .folderItem-right-button
+  border none
+  colorPrimaryButton()
+
+.folderItem-right-dangerButton
+  @extend .folderItem-right-button
+  border none
+  colorDangerButton()
+
+body[data-theme="dark"]
+  .folderItem
+    &:hover
+      background-color lighten($ui-dark-button--hover-backgroundColor, 5%)
+
+  .folderItem-left-danger
+    color $danger-color
+    font-weight bold
+
+  .folderItem-left-key
+    color $ui-dark-inactive-text-color
+
+  .folderItem-left-colorButton
+    colorDarkDefaultButton()
+    border-color $ui-dark-borderColor
+
+  .folderItem-right-button
+    colorDarkDefaultButton()
+    border-color $ui-dark-borderColor
+
+  .folderItem-right-confirmButton
+    colorDarkPrimaryButton()
+
+  .folderItem-right-dangerButton
+    colorDarkDangerButton()
+
+
+
+body[data-theme="solarized-dark"]
+  .folderItem
+    &:hover
+      background-color $ui-solarized-dark-button-backgroundColor
+
+  .folderItem-left-danger
+    color $danger-color
+
+  .folderItem-left-key
+    color $ui-dark-inactive-text-color
+
+  .folderItem-left-colorButton
+    colorSolarizedDarkPrimaryButton()
+
+  .folderItem-right-button
+    colorSolarizedDarkPrimaryButton()
+
+  .folderItem-right-confirmButton
+    colorSolarizedDarkPrimaryButton()
+
+  .folderItem-right-dangerButton
+    colorSolarizedDarkPrimaryButton()
+
+body[data-theme="monokai"]
+  .folderItem
+    &:hover
+      background-color $ui-monokai-button-backgroundColor
+
+  .folderItem-left-danger
+    color $danger-color
+
+  .folderItem-left-key
+    color $ui-dark-inactive-text-color
+
+  .folderItem-left-colorButton
+    colorMonokaiPrimaryButton()
+
+  .folderItem-right-button
+    colorMonokaiPrimaryButton()
+
+  .folderItem-right-confirmButton
+    colorMonokaiPrimaryButton()
+
+  .folderItem-right-dangerButton
+    colorMonokaiPrimaryButton()

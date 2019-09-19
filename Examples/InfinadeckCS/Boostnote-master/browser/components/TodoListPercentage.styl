@@ -1,0 +1,61 @@
+.percentageBar
+  position absolute
+  top 72px
+  right 0px
+  left 0px
+  background-color #DADFE1
+  width 100%
+  height: 17px
+  font-size: 12px
+  z-index 100
+  border-radius 2px
+
+.progressBar
+  background-color: #1EC38B
+  height 17px
+  border-radius 2px
+  transition 0.4s cubic-bezier(0.4, 0.4, 0, 1)
+
+.progressBarInner
+  padding 0 10px
+  min-width 1px
+  height 100%
+  display -webkit-box
+  display box
+  justify-content center
+  align-items center
+
+
+.percentageText
+  color #f4f4f4
+  font-weight 600
+
+body[data-theme="dark"]
+  .percentageBar
+    background-color #444444
+
+  .progressBar
+    background-color: #1EC38B
+
+  .percentageText
+    color $ui-dark-text-color
+    
+body[data-theme="solarized-dark"]
+  .percentageBar
+    background-color #002b36
+
+  .progressBar
+    background-color: #2aa198
+
+  .percentageText
+    color #fdf6e3
+
+body[data-theme="monokai"]
+  .percentageBar
+    background-color #f92672
+
+  .progressBar
+    background-color: #373831
+
+  .percentageText
+    color #fdf6e3

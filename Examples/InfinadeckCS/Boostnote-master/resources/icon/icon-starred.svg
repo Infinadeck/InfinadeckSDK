@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="16px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-starred</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-1419.000000, -184.000000)">
+            <g id="icon-starred" transform="translate(1419.000000, 184.000000)">
+                <rect id="Rectangle-7" fill="#D8D8D8" opacity="0" x="0" y="0" width="20" height="20"></rect>
+                <g id="star">
+                    <rect id="Rectangle-2" fill="#D8D8D8" opacity="0" x="0" y="0" width="20" height="20"></rect>
+                    <g transform="translate(1.666667, 1.666667)" stroke-linecap="round" id="Shape" stroke-width="1.66666667" stroke="#FDD835" fill="#FDD835" stroke-linejoin="round">
+                        <polygon points="8.33333333 0 10.9083333 5.21666667 16.6666667 6.05833333 12.5 10.1166667 13.4833333 15.85 8.33333333 13.1416667 3.18333333 15.85 4.16666667 10.1166667 0 6.05833333 5.75833333 5.21666667"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,172 @@
+@import('NoteDetailInfo')
+@import('DetailVars')
+
+.root
+  absolute top bottom right
+  border-left 1px solid alpha(#DEDEDE, 60%)
+  background-color $ui-noteDetail-backgroundColor
+  box-shadow none
+
+.body
+  absolute left right
+  margin 0 30px
+  top $info-height + $info-margin-under-border
+  bottom $statusBar-height
+  background-color $ui-noteDetail-backgroundColor
+
+.body .description
+  absolute top left right
+  height 50px
+
+.body .description textarea
+  outline none
+  display block
+  height 100%
+  width 100%
+  resize none
+  border 1px solid $ui-borderColor
+  padding 2px 5px
+  line-height 1.6
+  background-color $ui-noteDetail-backgroundColor
+
+.tabList
+  absolute left right
+  top 55px
+  height 30px
+  display flex
+  background-color $ui-noteDetail-backgroundColor
+  overflow hidden
+
+.tabList .list
+  flex 1
+  overflow hidden
+  overflow-x scroll
+  position relative
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .allTabs
+    display flex
+    position relative
+    overflow visible
+    left 0
+    transition left 0.1s
+
+.tabList .tabButton
+  navWhiteButtonColor()
+  width 30px
+
+.tabView
+  absolute left right bottom
+  top 100px
+
+.tabView-content
+  absolute top left right bottom
+
+.override
+  absolute bottom left
+  bottom 1px
+  left 60px
+  z-index 101
+  button
+    navButtonColor()
+    padding 0 6px
+    &:hover
+      color $ui-active-color
+    &:active .update-icon
+      color $ui-active-color
+
+.control-fullScreenButton
+  top 80px
+  margin-bottom 10px
+  topBarButtonRight()
+  &:hover .tooltip
+    opacity 1
+
+.tooltip
+  tooltip()
+  position absolute
+  pointer-events none
+  top 50px
+  right 70px
+  z-index 200
+  padding 5px
+  line-height normal
+  border-radius 2px
+  opacity 0
+  transition 0.1s
+
+body[data-theme="white"]
+  .root
+    box-shadow $note-detail-box-shadow
+    border none
+
+body[data-theme="dark"]
+  .root
+    border-left 1px solid $ui-dark-borderColor
+    background-color $ui-dark-noteDetail-backgroundColor
+    box-shadow none
+
+  .body
+    background-color $ui-dark-noteDetail-backgroundColor
+
+  .body .description textarea
+    background-color $ui-dark-noteDetail-backgroundColor
+    color $ui-dark-text-color
+    border 1px solid $ui-dark-borderColor
+
+  .tabList
+    background-color $ui-button--active-backgroundColor
+    background-color $ui-dark-noteDetail-backgroundColor
+
+  .tabList .list
+    border-color $ui-dark-borderColor
+
+  .tabList .plusButton
+    navDarkButtonColor()
+  .override
+    button
+      border-color $ui-dark-borderColor
+      &:hover
+        background-color alpha($ui-dark-button--active-backgroundColor, 20%)
+        transition 0.15s
+        color $ui-dark-text-color
+
+  .control-fullScreenButton
+    topBarButtonDark()
+
+body[data-theme="solarized-dark"]
+  .root
+    border-left 1px solid $ui-solarized-dark-borderColor
+    background-color $ui-solarized-dark-noteDetail-backgroundColor
+
+  .body
+    background-color $ui-solarized-dark-noteDetail-backgroundColor
+
+  .body .description textarea
+    background-color $ui-solarized-dark-noteDetail-backgroundColor
+    color $ui-solarized-dark-text-color
+    border 1px solid $ui-solarized-dark-borderColor
+
+  .tabList
+    background-color $ui-solarized-dark-noteDetail-backgroundColor
+    color $ui-solarized-dark-text-color
+
+body[data-theme="monokai"]
+  .root
+    border-left 1px solid $ui-monokai-borderColor
+    background-color $ui-monokai-noteDetail-backgroundColor
+
+  .body
+    background-color $ui-monokai-noteDetail-backgroundColor
+
+  .body .description textarea
+    background-color $ui-monokai-noteDetail-backgroundColor
+    color $ui-monokai-text-color
+    border 1px solid $ui-monokai-borderColor
+
+  .tabList
+    background-color $ui-monokai-noteDetail-backgroundColor
+    color $ui-monokai-text-color

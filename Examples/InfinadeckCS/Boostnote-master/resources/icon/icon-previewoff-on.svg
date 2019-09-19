@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-previewoff-on</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1438.000000, -366.000000)" stroke-linecap="round" stroke-linejoin="round">
+        <g id="icon-previewoff-on" transform="translate(1439.000000, 367.000000)" stroke="#1EC38B" stroke-width="1.45454545">
+            <path d="M12.32,12.32 C11.0767927,13.267638 9.56298725,13.7926278 8,13.8181818 C2.90909091,13.8181818 0,8 0,8 C0.904647197,6.31410594 2.15937124,4.84116902 3.68,3.68 M6.47272727,2.35636364 C6.97333258,2.2391851 7.48586478,2.18060999 8,2.18181818 C13.0909091,2.18181818 16,8 16,8 C15.5585306,8.82589626 15.0320403,9.60344443 14.4290909,10.32 M9.54181818,9.54181818 C8.99790377,10.1255365 8.17874751,10.3658158 7.40570499,10.1683943 C6.63266247,9.97097281 6.02902719,9.36733753 5.8316057,8.59429501 C5.6341842,7.82125249 5.87446348,7.00209623 6.45818182,6.45818182" id="Shape"></path>
+            <path d="M0,0 L16,16" id="Shape"></path>
+        </g>
+    </g>
+</svg>

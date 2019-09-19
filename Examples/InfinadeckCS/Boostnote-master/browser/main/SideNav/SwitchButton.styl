@@ -1,0 +1,60 @@
+.non-active-button
+  color $ui-inactive-text-color
+  font-size 16px
+  border 0
+  background-color transparent
+  transition 0.2s
+  display flex
+  text-align center
+  margin-right 4px
+  position relative
+  &:hover
+    color alpha(#239F86, 60%)
+    .tooltip
+      opacity 1
+
+.active-button
+  @extend .non-active-button
+  color $ui-button-default--active-backgroundColor
+
+.tooltip
+  tooltip()
+  position absolute
+  pointer-events none
+  top 22px
+  left -2px
+  z-index 200
+  padding 5px
+  line-height normal
+  border-radius 2px
+  opacity 0
+  transition 0.1s
+  white-space nowrap
+
+body[data-theme="white"]
+  .non-active-button
+    color $ui-inactive-text-color
+    &:hover
+      color alpha(#0B99F1, 60%)
+
+  .tag-title
+    p
+      color $ui-text-color
+
+  .non-active-button
+    &:hover
+      color alpha(#0B99F1, 60%)
+
+  .active-button
+    @extend .non-active-button
+    color #0B99F1
+
+body[data-theme="dark"]
+  .non-active-button
+    color alpha($ui-dark-text-color, 60%)
+    &:hover
+      color alpha(#0B99F1, 60%)
+
+  .tag-title
+    p
+      color alpha($ui-dark-text-color, 60%)

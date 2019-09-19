@@ -1,0 +1,141 @@
+@import('./Tab')
+
+top-bar--height = 50px
+
+.root
+  modal()
+  max-width 100vw
+  min-height 100vh
+  height 100vh
+  width 100vw
+  overflow hidden
+  position relative
+
+.top-bar
+  absolute top left right
+  height top-bar--height
+  background-color $ui-backgroundColor
+  border-bottom solid 1px $ui-borderColor
+  p
+    text-align center
+    font-size 18px
+    line-height top-bar--height
+
+.nav
+  absolute top left right
+  top top-bar--height
+  left 0
+  width 170px
+  margin-left 10px
+  margin-top 20px
+  background-color $ui-backgroundColor
+
+.nav-button
+  font-size 14px
+  text-align left
+  width 150px
+  margin 5px 0
+  padding 7px 0
+  padding-left 10px
+  border none
+  border-radius 2px
+  background-color transparent
+  color $ui-text-color
+  font-size 16px
+  .saving--warning
+    haveToSave()
+
+.nav-button--active
+  @extend .nav-button
+  color $ui-text-color
+  background-color $ui-button--active-backgroundColor
+  &:hover
+    color $ui-text-color
+  .saving--warning
+    haveToSave()
+
+.nav-button-icon
+  display block
+
+.content
+  absolute left right bottom
+  top top-bar--height
+  left 170px
+  margin-top 10px
+  overflow-y auto
+
+body[data-theme="dark"]
+  .root
+    modalDark()
+
+  .top-bar
+    background-color transparent
+    border-color #4A4D52
+    p
+      color $tab--dark-text-color
+
+  .nav
+    background-color transparent
+    border-color $ui-dark-borderColor
+
+  .nav-button
+    background-color transparent
+    color $tab--dark-text-color
+    &:hover
+      color $ui-dark-text-color
+
+  .nav-button--active
+    @extend .nav-button
+    color white
+    background-color $dark-primary-button-background--active
+    &:hover
+      color white
+      
+
+body[data-theme="solarized-dark"]
+  .root
+    background-color transparent
+  .top-bar
+    background-color transparent
+    border-color $ui-solarized-dark-borderColor
+    p
+      color $ui-solarized-dark-text-color
+  .nav
+    background-color transparent
+    border-color $ui-solarized-dark-borderColor
+  .nav-button
+    background-color transparent
+    color $ui-solarized-dark-text-color
+    &:hover
+      color $ui-solarized-dark-text-color
+
+  .nav-button--active
+    @extend .nav-button
+    color $ui-solarized-dark-button--active-color
+    background-color $ui-solarized-dark-button--active-backgroundColor
+    &:hover
+      color white
+
+body[data-theme="monokai"]
+  .root
+    background-color transparent
+  .top-bar
+    background-color transparent
+    border-color $ui-monokai-borderColor
+    p
+      color $ui-monokai-text-color
+  .nav
+    background-color transparent
+    border-color $ui-monokai-borderColor
+  .nav-button
+    background-color transparent
+    color $ui-monokai-text-color
+    &:hover
+      color $ui-monokai-text-color
+
+  .nav-button--active
+    @extend .nav-button
+    color $ui-monokai-button--active-color
+    background-color $ui-monokai-button--active-backgroundColor
+    &:hover
+      color white

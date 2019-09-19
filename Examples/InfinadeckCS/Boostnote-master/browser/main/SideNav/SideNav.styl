@@ -1,0 +1,124 @@
+.root
+  absolute top left bottom
+  width $sideNav-width
+  background-color #2E3235
+  user-select none
+  color $ui-text-color
+  height: 100vh
+  display: flex
+  flex-direction column
+
+.top
+  padding-bottom 15px
+
+.switch-buttons
+  background-color transparent
+  border 0
+  margin 24px auto 4px 14px
+  display flex
+  text-align center
+
+
+  
+.top-menu-label
+  margin-left 5px
+  overflow ellipsis
+  opacity 0
+
+.tabBody
+  flex 1
+  display flex
+  flex-direction column
+
+.tag-control
+  display flex
+  height 30px
+  line-height 25px
+  overflow hidden
+  .tag-control-title
+    padding-left 15px
+    padding-bottom 13px
+    flex 1
+    p
+      color $ui-button-default-color
+  .tag-control-sortTagsBy
+    user-select none
+    font-size 12px
+    color $ui-inactive-text-color
+    margin-left 12px
+    margin-right 12px
+    .tag-control-sortTagsBy-select
+      appearance: none;
+      margin-left 5px
+      color $ui-inactive-text-color
+      padding 0
+      border none
+      background-color transparent
+      outline none
+      cursor pointer
+      font-size 12px
+
+.tagList
+  overflow-y auto
+  flex: 1
+
+.root--folded
+  height 100vh
+  width $sideNav--folded-width
+  background-color #2E3235
+  .switch-buttons
+    display none
+  .top
+    height 60px
+  .top-menu
+    position static
+    width $sideNav--folded-width
+    height 60px
+    text-align center
+    &:hover .top-menu-label
+      transition opacity 0.15s
+      opacity 1
+  .top-menu-label
+    position fixed
+    display inline-block
+    height 30px
+    left $sideNav--folded-width
+    padding 0 10px
+    margin-top -8px
+    opacity 0
+    margin-left 0
+    overflow hidden
+    z-index 10
+    color white
+    line-height 30px
+    border-top-right-radius 2px
+    border-bottom-right-radius 2px
+    pointer-events none
+    font-size 13px
+  .top-menu-preference
+    position absolute
+    left 7px
+
+body[data-theme="white"]
+  .root, .root--folded
+    background-color #f9f9f9
+    color $ui-text-color
+
+body[data-theme="dark"]
+  .root, .root--folded
+    border-right 1px solid $ui-dark-borderColor
+    background-color $ui-dark-backgroundColor
+    color $ui-dark-text-color
+
+  .top
+    border-color $ui-dark-borderColor
+
+body[data-theme="solarized-dark"]
+  .root, .root--folded
+    background-color $ui-solarized-dark-backgroundColor
+    border-right 1px solid $ui-solarized-dark-borderColor
+
+body[data-theme="monokai"]
+  .root, .root--folded
+    background-color $ui-monokai-backgroundColor
+    border-right 1px solid $ui-monokai-borderColor

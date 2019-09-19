@@ -1,0 +1,169 @@
+global-reset()
+@import '../styles/vars.styl'
+
+DEFAULT_FONTS = 'OpenSans', helvetica, arial, sans-serif
+
+html, body
+  width 100%
+  height 100%
+  overflow hidden
+
+body
+  font-family DEFAULT_FONTS
+  color textColor
+  font-size fontSize
+  font-weight 200
+  -webkit-font-smoothing antialiased
+
+::-webkit-scrollbar
+  width 12px
+
+::-webkit-scrollbar-thumb
+  background-color rgba(0, 0, 0, 0.15)
+
+button, input, select, textarea
+  font-family DEFAULT_FONTS
+
+div, span, a, button, input, textarea
+  box-sizing border-box
+
+a
+  color $brand-color
+  &:hover
+    color lighten($brand-color, 5%)
+  &:visited
+    color $brand-color
+
+hr
+  border-top none
+  border-bottom solid 1px $border-color
+  margin 15px 0
+
+button
+  font-weight 400
+  cursor pointer
+  font-size 12px
+  &:focus, &.focus
+    outline none
+  &:disabled
+    cursor not-allowed
+input
+  &:disabled
+    cursor not-allowed
+.noSelect
+  noSelect()
+
+.text-center
+  text-align center
+
+.form-group
+  margin-bottom 15px
+  &>label
+    display block
+    margin-bottom 5px
+
+textarea.block-input
+  resize vertical
+  height 125px
+  border-radius 5px
+  padding 5px 10px
+
+#content
+  fullsize()
+
+modalZIndex= 1000
+modalBackColor = white
+.ace_focus
+  outline-color rgb(59, 153, 252)
+  outline-offset 0px
+  outline-style auto
+  outline-width 5px
+.ModalBase
+  fixed top left bottom right
+  z-index modalZIndex
+  display flex
+  align-items center
+  justify-content center
+
+  &.hide
+    display none
+  .modalBack
+    absolute top left bottom right
+    background-color modalBackColor
+    z-index modalZIndex + 1
+
+
+body[data-theme="dark"]
+  ::-webkit-scrollbar-thumb
+    background-color rgba(0, 0, 0, 0.3)
+  .ModalBase
+    .modalBack
+      background-color $ui-dark-backgroundColor
+  .sortableItemHelper
+    color: $ui-dark-text-color
+
+.CodeMirror
+  font-family inherit !important
+  line-height 1.4em
+  height 100%
+.CodeMirror > div > textarea
+  margin-bottom -1em
+.CodeMirror-focused .CodeMirror-selected
+  background #B1D7FE
+.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection
+  background #B1D7FE
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection
+  background #B1D7FE
+::selection
+  background #B1D7FE
+.CodeMirror-foldmarker
+  font-family: arial
+
+.CodeMirror-foldgutter
+  width: .7em
+
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded
+  cursor: pointer
+
+.CodeMirror-foldgutter-open:after
+  content: "\25BE"
+
+.CodeMirror-foldgutter-folded:after
+  content: "\25B8"
+
+.CodeMirror-hover
+  padding 2px 4px 0 4px
+  position absolute
+  z-index 99
+
+.CodeMirror-hyperlink
+  cursor pointer
+
+
+.sortableItemHelper
+  z-index modalZIndex + 5
+
+body[data-theme="solarized-dark"]
+  ::-webkit-scrollbar-thumb
+    background-color rgba(0, 0, 0, 0.3)
+  .ModalBase
+    .modalBack
+      background-color $ui-solarized-dark-backgroundColor
+  .sortableItemHelper
+    color: $ui-solarized-dark-text-color
+
+body[data-theme="monokai"]
+  ::-webkit-scrollbar-thumb
+    background-color rgba(0, 0, 0, 0.3)
+  .ModalBase
+    .modalBack
+      background-color $ui-monokai-backgroundColor
+  .sortableItemHelper
+    color: $ui-monokai-text-color
+
+body[data-theme="default"]
+  .SideNav ::-webkit-scrollbar-thumb
+    background-color rgba(255, 255, 255, 0.3)
+
+@import '../styles/Detail/TagSelect.styl'

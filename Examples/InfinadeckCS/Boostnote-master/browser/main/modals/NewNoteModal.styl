@@ -1,0 +1,99 @@
+.root
+  modal()
+  max-width 540px
+  overflow hidden
+  position relative
+
+.header
+  height 50px
+  font-size 18px
+  line-height 50px
+  padding 0 15px
+  color $ui-text-color
+  margin-bottom 20px
+
+.title
+  font-size 36px
+  font-weight 600
+
+.control
+  padding 25px 0px
+  text-align center
+
+.control-button
+  width 240px
+  height 220px
+  margin 0 15px
+  border $ui-border
+  border-radius 5px
+  color $ui-text-color
+  colorDefaultButton()
+  padding 10px
+  &:focus
+    colorPrimaryButton()
+
+.control-button-icon
+  font-size 48px
+  margin-bottom 25px
+
+.control-button-label
+  font-size 18px
+  line-height 32px
+.control-button-description
+  font-size 12px
+
+.description
+  color $ui-inactive-text-color
+  text-align center
+  margin-bottom 25px
+
+body[data-theme="dark"]
+  .root
+    modalDark()
+
+  .header
+    color $ui-dark-text-color
+
+  .control-button
+    border-color $ui-dark-borderColor
+    color $ui-dark-text-color
+    background-color transparent
+    &:focus
+      colorDarkPrimaryButton()
+
+  .description
+    color $ui-inactive-text-color
+
+body[data-theme="solarized-dark"]
+  .root
+    background-color transparent
+
+  .header
+    color $ui-solarized-dark-text-color
+
+  .control-button
+    border-color $ui-solarized-dark-borderColor
+    color $ui-solarized-dark-text-color
+    background-color transparent
+    &:focus
+      colorDarkPrimaryButton()
+
+  .description
+    color $ui-solarized-dark-text-color
+
+body[data-theme="monokai"]
+  .root
+    background-color transparent
+
+  .header
+    color $ui-monokai-text-color
+
+  .control-button
+    border-color $ui-monokai-borderColor
+    color $ui-monokai-text-color
+    background-color transparent
+    &:focus
+      colorDarkPrimaryButton()
+
+  .description
+    color $ui-monokai-text-color

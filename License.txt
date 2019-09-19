@@ -1,0 +1,309 @@
+INFINADECK SOFTWARE LICENSE AGREEMENT
+READ THIS AGREEMENT CAREFULLY. YOUR ACCESS TO AND USE OF ANY THE INFINADECK SOFTWARE
+IS GOVERNED BY THE TERMS AND CONDITIONS OF THIS AGREEMENT. BY INSTALLING, USING OR
+ACCESSING THE INFINADECK SOFTWARE, YOU ACCEPT THESE TERMS. IF YOU DO NOT ACCEPT THESE
+TERMS, DO NOT INSTALL, USE OR ACCESS THE SDK.
+
+
+1 Definitions
+a) “Agreement” means the version of this Infinadeck SDK License Agreement as it appears on the at any
+given time.
+b) “Application” means engines, utilities, applications, content, games or demos that operate solely in
+connection with Infinadeck Products.
+c) “Authorized User” means you and any member of your class or organization or any employee or
+contractor who (i) must have access to the SDK in order to develop Applications and (ii) understands and
+is bound by the terms of this Agreement.
+d) “End User” means any customer or licensee who has purchased or licensed your Application for
+personal use in connection with an Infinadeck Product and not for redistribution or further
+development.
+e) “Firmware” means software programs, applications or instructions programmed on a device embedded
+in Infinadeck Hardware.
+f) “Intellectual Property Rights” means all forms of intellectual property rights as recognized worldwide
+including, without limitation, patents, trademarks, copyrights, industrial design rights, moral rights,
+mask rights, trade secrets and proprietary know-how.
+g) “Infinadeck”, “us” or “we” means Infinadeck; a California Corporation, with offices located at: 4105 Del
+Mar Ave, Suite 3, Rocklin, CA 95650
+h) “Infinadeck Hardware” means the Infinadeck Omni-Directional Treadmill System and all electrical,
+mechanical, motorized, and non-software/firmware elements of the Infinadeck Products.
+i) “Infinadeck Products” means any device using Infinadeck Hardware and Infinadeck Software made
+commercially available by Infinadeck.
+j) “Infinadeck Software” means (i) the applications that operate and interact with Infinadeck Hardware to
+provide omni-direction motion, (ii) the SDK, and (iii) the Infinadeck Firmware.
+k) “SDK” means the Infinadeck Software Development Kit or any Infinadeck software, (including programs,
+tools, sample code, templates, libraries, and interfaces), Updates, APIs, information, data, files,
+documentation, and other materials, whether tangible or intangible, in whatever form or medium
+(including on-line tools), provided to you at any time, either by way of downloading from Infinadeck or
+otherwise provided to you, for purposes of developing an Application.
+l) “Update” means updates, upgrades, modifications, enhancements, revisions, new releases or new
+versions to the Infinadeck Software.
+m) “You” or “you” means the person or entity which is entering into this Agreement with Infinadeck and
+agreeing to be bound by its terms.
+
+
+2 Acceptance and Scope of License; Changes
+a) Your acceptance of this Agreement (and any later versions), including the licenses granted and all
+restrictions, is evidenced by any one of the following:
+i) installing the Infinadeck Software,
+ii) using of all or part of the Infinadeck Software,
+iii) developing an Application, or
+iv) accepting the click-through license.
+b) When you accept this Agreement, you accept on behalf of yourself and all Authorized Users.
+c) Infinadeck may change this Agreement or the Infinadeck Software at its option, at any time and without
+notice to you, by posting them on the Infinadeck site at http://Infinadeck.com/. You are responsible for
+checking the Infinadeck site and ensuring that you are operating under the correct Agreement or
+Infinadeck Software. Applications (and any updates to the Applications) are governed by the version of
+the Agreement and Infinadeck Software in effect when they are developed. You may not develop an
+Application using a retired Infinadeck Software or under the terms of an old Agreement.
+d) If you do not accept a new version of the Agreement, you must immediately stop using the Infinadeck
+Software or any Infinadeck software and terminate this Agreement as provided in Section 11.
+
+
+3 License Grant and Restrictions
+a) Subject to your compliance with the terms and conditions of this Agreement, Infinadeck hereby grants
+you a limited, non-exclusive, perpetual, revocable, worldwide, royalty-free, personal and non-
+transferable license to:
+i) install complete copies of the Infinadeck Software (including without limitation all "read me" files,
+copyright notices, and other legal notices and terms) on devices that are owned or controlled by you
+or Authorized Users;
+ii) use the Infinadeck Software solely for the purpose of developing, prototyping and testing
+Applications;
+iii) modify, copy, incorporate into an Application, and distribute the source code form of any sample
+code provided in the SDK or any Infinadeck software;
+iv) subject to Section 9(a)(3), modify, copy, incorporate into an Application, and distribute the
+source and object code form of any API code provided in the SDK;
+v) copy and distribute (or allow someone else to copy and distribute) the sample code and API in the
+SDK, solely as compiled with, incorporated into, or packaged with your Application; and
+vi) make (but not allow anyone else to make), use, sell, and offer for sale your Application.
+b) The license granted to you under Section 3(a) is subject to certain limitations. In addition to other
+obligations and restrictions outlined elsewhere in this Agreement, you may not:
+i) use the Infinadeck Software for any purpose or in any manner not specifically mentioned in the
+license granted to you under Section 3(a);
+ii) use the Infinadeck Software to develop applications for use with any non-Infinadeck device,
+hardware or software;
+iii) publish the Infinadeck Software for others to use or copy;
+iv) create derivative works of the Infinadeck Software;
+v) work around any technical limitations in the Infinadeck Software or reverse engineer, decompile,
+disassemble or otherwise seek to ascertain the source code in the SDK, Infinadeck Software, or
+Infinadeck Firmware, except and only to the extent that applicable law expressly permits despite
+this limitation;
+vi) incorporate into or distribute with an Application any part of the SDK that is designated as non-
+distributable; or
+vii) remove or alter any copyright, trademark or proprietary notices from any part of the SDK.
+
+
+4 Prohibited Applications; Waiver and Indemnity
+a) You may not create Applications or other software that:
+i) prevent or degrade the interaction of Applications developed by anyone else for use with the
+Infinadeck Products;
+ii) disparage Infinadeck or its products or services;
+iii) violate or infringe any Infinadeck Intellectual Property Right; or
+iv) use the SDK or any of its features to invade the privacy of any person or otherwise violate any law,
+including, but not limited to, by usage of GPS functionality, location/tracking services, etc.
+b) You are not licensed and expressly agree not to develop Applications which might cause death or serious
+bodily injury to any person, or serious physical or environmental damage if your Application or
+Infinadeck Products fail in any way. ANY SUCH USE IS STRICTLY PROHIBITED.
+c) You understand and acknowledge that
+i) your Application will control the mechanical, electrical and motorized elements of Infinadeck
+Products and
+ii) that Infinadeck Products and the SDK Software, in particular, may not always operate as intended or
+error free. For this reason, you must and expressly agree to design and test your Application to
+ensure that the Application or the failure of Infinadeck Products does not present risk of personal
+injury or death or damage to real or personal property.
+
+If you choose to use the Infinadeck Software, (i) you assume all risk that your or someone else’s use
+of the Infinadeck Products, Infinadeck Hardware or Infinadeck Software causes any harm or loss,
+including to End Users of your Applications or to third parties, (ii) you hereby waive, on behalf of
+yourself and your Authorized Users, all claims against Infinadeck related to such use, harm or loss
+(including, but not limited to, any claim that the Infinadeck Software, Infinadeck Products, Infinadeck
+Hardware or Infinadeck Software is defective), and (iii) you agree to indemnify, defend and hold
+harmless Infinadeck from such claims.
+
+
+5 Updates
+This Agreement will apply to any Updates made available to you by Infinadeck. You acknowledge that Updates
+may require you to change or update your Application, and may affect your ability to use, access or interact with
+the SDK, Infinadeck Software or Infinadeck Hardware.
+
+
+6 Trademarks and Publicity; Promotional License
+a) You must indicate that your Application “Works with Infinadeck”, has “Omni-Directional Treadmill
+Provided by Infinadeck” or the like, but you may not use the Infinadeck name or trademark in your
+Applications’ names, company name, any URL, or logo or in a way that suggests your Applications come
+from or are endorsed by Infinadeck. You may not use an Infinadeck trademark, logo or service mark in
+any advertising, promotional or marketing materials, press release, endorsement or public statement
+without the prior written consent of Infinadeck. Any permitted use will be subject to the Infinadeck’s
+branding guidelines and prior review.
+b) You will make reasonable effort to notify Infinadeck in advance if any promotion, advertising, PR
+campaign or demonstration of your Application or Infinadeck Products is likely to generate press or
+public inquiries to Infinadeck. Infinadeck may support your promotional activities, including technical
+and marketing advice or attendance at trade shows, but we are under no obligation to do so.
+c) You hereby grant to Infinadeck, during the term of this Agreement, a limited, non-exclusive, worldwide,
+royalty-free, license to use, demonstrate, reproduce, display, perform, publish and distribute
+screenshots, elements, photographic, graphic or video reproductions or all or part of your Application in
+any medium or media, solely for purposes of promoting your Application or Infinadeck and its
+technology and business.
+Infinadeck will use reasonable effort to ensure that any materials created under this license conform to your
+branding guidelines.
+
+
+7 Pre-release Software and Hardware Obligations
+Infinadeck may, at its option, make certain pre-release (alpha or beta) versions of software or hardware
+available to you which it identifies as non-public. You agree not to disclose such pre-release versions to anyone
+else without Infinadeck’s prior written consent unless or until they are made public by Infinadeck, and that their
+use is governed by the terms of this Agreement.
+
+
+8 Support and Feedback
+a) Infinadeck is not obligated to provide any technical or other support for the SDK to you or your End
+Users. However, if Infinadeck chooses to provide any support to you, then you agree that Infinadeck has
+an unrestricted right to use any technical or other information you provide for its business purposes,
+including for product support and development. Infinadeck will not use such information in a form that
+personally identifies you.
+b) You may, at your option, provide feedback, comments and suggestions to Infinadeck regarding technical
+and business issues. You hereby grant to Infinadeck a non-exclusive, perpetual, irrevocable, paid-up,
+transferable, sub-licensable, worldwide license under all relevant Intellectual Property Rights to use,
+disclose and exploit all such feedback for any purpose.
+
+
+9 Ownership
+a) The Infinadeck Software and SDK is licensed, not sold. Infinadeck reserves all other rights not granted in
+this Agreement. The parties acknowledge that, as between Infinadeck and you:
+i) Infinadeck or its licensors retain complete ownership of all Intellectual Property Rights in and to the
+Infinadeck Software;
+ii) you retain complete ownership of all Intellectual Property Rights in the Application (subject to
+Infinadeck’s underlying ownership of the Intellectual Property Rights in and to the Infinadeck
+Software); and
+iii) If and to the extent you modify any source code in the API, you hereby grant to Infinadeck a non-
+exclusive, perpetual, irrevocable, paid-up, transferable, sub-licensable, worldwide license under all
+applicable Intellectual Property Rights to use, disclose and exploit all such modifications for any
+purpose.
+b) Nothing in this Agreement will be construed to transfer or assign any Intellectual Property Rights of
+either party to the other
+
+
+10 Data Collection and Privacy
+By submitting your information to Infinadeck through your access to the Infinadeck Software, you agree that
+Infinadeck may periodically collect, process and store personal information provided by you, as well as technical
+non-personally- identifiable and/or aggregated information including (but not limited to) usage statistics,
+hardware configuration, problem/fault data, IP addresses, Infinadeck Software version number, and use of
+Infinadeck Software tools and services. Infinadeck will use the collected data for internal statistical and analytical
+purposes, to verify compliance with this Agreement, and to improve the Infinadeck Software and Infinadeck
+Products and for no other purposes (except as required by law). We will not share your information with any
+third party for any reason.
+
+
+11 Termination
+This Agreement will continue as long as you are in compliance with its terms or until otherwise terminated.
+Infinadeck may terminate this Agreement for any reason or no reason at all by giving 5 business days written
+notice to you. You understand that by doing so we will not be liable to you or any other person for any
+inconvenience, losses or damages whatsoever. Infinadeck may terminate this Agreement, effective immediately,
+if you fail to cure any breach of this Agreement within 10 days following notice of such breach from Infinadeck.
+You may terminate this Agreement at any time with notice to Infinadeck. When this Agreement is terminated by
+either party, you must immediately destroy all copies of the Infinadeck software in your possession or control
+and stop developing Applications. End Users may continue to use Applications after this Agreement is
+terminated.
+
+
+12 Disclaimer of Warranties and Limitation of Liability
+INFINADECK SOFTWARE ANS SDK IS PROVIDED “AS IS” WITHOUT ANY WARRANTIES OF ANY KIND. TO THE
+MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, INFINADECK DISCLAIMS ANY IMPLIED WARRANTIES,
+INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NON-INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS. TO THE MAXIMUM
+EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL INFINADECK BE LIABLE FOR ANY LOST PROFITS OR
+BUSINESS OPPORTUNITIES, LOSS OF USE, BUSINESS INTERRUPTION, LOSS OF DATA, OR ANY OTHER INDIRECT,
+SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES RELATING TO THE SDK OR THIS AGREEMENT, UNDER ANY
+THEORY OF LIABILITY, WHETHER BASED IN CONTRACT, TORT, NEGLIGENCE, PRODUCT LIABILITY, OR OTHERWISE.
+INFINADECK’S TOTAL LIABILITY RELATING TO THE SDK OR THIS AGREEMENT WILL NOT, IN ANY EVENT, EXCEED
+US $100.00. THE FOREGOING LIMITATIONS WILL APPLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE
+LAW, REGARDLESS OF WHETHER INFINADECK HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND
+REGARDLESS OF WHETHER ANY REMEDY FAILS OF ITS ESSENTIAL PURPOSE.
+
+
+13 Indemnification
+You will defend, indemnify, and hold harmless Infinadeck, including its directors, officers, employees,
+contractors, agents, and end users against any third party claim, suit, or proceeding and any liability, damage,
+loss, cost, and expenses (including attorney's fees) arising from the Claim threatened or brought against
+Infinadeck alleging that any Application infringes (including contributory infringement) or misappropriates any
+third party Intellectual Property Right. Infinadeck will provide you written notice of any claim within a
+reasonable time after it receives written notice of the Claim. Infinadeck’s failure to provide timely written notice
+will not excuse your obligation under this Agreement unless lack of actual notice of the claim has a substantially
+adverse effect on your ability to defend the claim. You will have sole control of the defense, but you will not
+settle any claim, and no settlement of a claim will be binding on Infinadeck, without its prior written consent,
+which will not be unreasonably withheld or delayed.
+
+
+14 Assignment
+Infinadeck may assign this contract at any time without your consent, but we will use reasonable efforts to
+notify you regarding any changes of ownership. You may not assign, transfer or sublicense this Agreement to
+anyone else and any attempt to do so in violation of this section will be null and void.
+
+
+15 Governing Law
+This Agreement and any action related thereto will be governed, controlled, interpreted, and defined by and
+under the laws of the State of California, without giving effect to any conflicts of laws principles that require the
+application of the law of a different state. Both Parties consent to the personal and exclusive jurisdiction of the
+California state and federal courts in California and agree that, to the extent permitted by law, any dispute or
+controversy arising out of or related to this Agreement shall be brought in Sacramento, California, including
+without limitation any action involving claims for breach of this Agreement or misappropriation of Information.
+
+
+16 Relationship
+Infinadeck and you are independent third parties. Neither party has, nor may represent that it has, any power,
+right or authority to bind the other party, or to assume or create any obligation or responsibility, express or
+implied, on behalf of the other party or in the other party’s name. Nothing in this Agreement may be construed
+as creating an employer/employee, franchiser/franchisee or principal/agent relationship between the parties.
+
+
+17 Notices
+All notices under this Agreement must be in writing. Infinadeck will send notices to you at the email address
+from which you accessed the SDK. You must send notices by recognized courier to Infinadeck at the address
+listed in Section 1(g), with a copy to info@Infinadeck.com with confirmation of receipt.
+
+
+18 Export
+You acknowledge that the SDK or any Infinadeck software is of United States origin, is provided subject to the
+U.S. Export Administration Regulations, may be subject to the export control laws of the applicable territory, and
+that diversion contrary to applicable export control laws is prohibited. You represent, warrant and covenant that
+(i) You are not, and are not acting on behalf of, (a) any person who is a citizen, national, or resident of, or who is
+controlled by the government of any country to which the United States has prohibited export transactions; or
+(b) any person or entity listed on the U.S. Treasury Department list of Specially Designated Nationals and
+Blocked Persons, or the U.S. Commerce Department Denied Persons List or Entity List; and (ii) You will not
+permit the SDK to be used for any purposes prohibited by law, including, any prohibited development, design,
+manufacture or production of missiles or nuclear, chemical or biological weapons.
+
+
+19 Severability; Enforceability
+If any provision of this Agreement is held invalid or unenforceable, the unenforceable provision will (i) not affect
+the validity or enforceability of any other provision of this Agreement, and (ii) be deemed modified to the
+limited extent required to permit its enforcement in a manner most closely approximating the intent of the
+parties.
+
+
+20 Eligibility and Authority; Warranty
+You represent and warrant that (i) you are at least 18 years old or otherwise old enough to enter into this
+Agreement in your jurisdiction and (ii) have the authority to bind Authorized Users, if applicable.
+
+
+21 Government Use
+The SDK provided to the U.S. Government as "commercial items," "commercial computer software,"
+"commercial computer software documentation," and "technical data" (each, as defined in the Federal
+Acquisition Regulation and the Defense Federal Acquisition Regulation Supplement) with the same rights and
+restrictions generally applicable to others under this License Agreement. If you are using the SDK on behalf of
+the U.S. Government and these terms fail to meet the U.S. Government’s needs or are inconsistent in any
+respect with federal law, you must immediately discontinue your use of the SDK.
+
+
+22 Survival
+Sections 9, 10, 12, 13 and 15 will survive the expiration or termination of this Agreement.
+
+
+23 Waiver
+A waiver of a breach of any term in this Agreement will not be considered (i) a waiver of another breach of the
+same term, (ii) a waiver of a breach of any other term, or (iii) a waiver of Infinadeck’s right to declare an
+immediate or a subsequent breach.
+
+
+24 Entire Agreement; Modifications
+This Agreement is the complete and exclusive statement of the mutual understanding between Infinadeck and
+you and supersedes and cancels all previous written and oral agreements, negotiations and communications
+relating to its subject matter. This Agreement may only be modified or amended in a writing signed by both parties.

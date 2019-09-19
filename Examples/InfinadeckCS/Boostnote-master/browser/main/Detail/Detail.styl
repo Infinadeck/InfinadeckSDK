@@ -1,0 +1,39 @@
+.root
+  absolute top bottom right
+  display flex
+  align-items center
+  justify-content center
+
+.empty
+  height 320px
+  display flex
+  align-items center
+
+.empty-message
+  width 100%
+  font-size 36px
+  font-weight 600
+  line-height 56px
+  text-align center
+  color $ui-inactive-text-color
+
+body[data-theme="dark"]
+  .root
+    background-color $ui-dark-backgroundColor
+    border-left 1px solid $ui-dark-borderColor
+  .empty-message
+    color $ui-dark-inactive-text-color
+    
+body[data-theme="solarized-dark"]
+  .root
+    background-color $ui-solarized-dark-noteDetail-backgroundColor
+    border-left 1px solid $ui-solarized-dark-borderColor
+  .empty-message
+    color $ui-solarized-dark-text-color
+
+body[data-theme="monokai"]
+  .root
+    background-color $ui-monokai-noteDetail-backgroundColor
+    border-left 1px solid $ui-monokai-borderColor
+  .empty-message
+    color $ui-monokai-text-color

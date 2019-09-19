@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-star-active</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-150.000000, -290.000000)">
+            <g id="BG" transform="translate(64.000000, 132.000000)">
+                <g id="icon-star-active" transform="translate(85.000000, 157.000000)">
+                    <rect id="Rectangle-7" fill="#D8D8D8" opacity="0" x="0" y="0" width="20" height="20"></rect>
+                    <g id="star" transform="translate(1.000000, 1.000000)">
+                        <rect id="Rectangle-2" fill="#D8D8D8" opacity="0" x="0" y="0" width="18" height="18"></rect>
+                        <g transform="translate(1.500000, 1.500000)" stroke-linecap="round" id="Shape" stroke-width="1.5" stroke="#1EC38B" stroke-linejoin="round">
+                            <polygon points="7.5 0 9.8175 4.695 15 5.4525 11.25 9.105 12.135 14.265 7.5 11.8275 2.865 14.265 3.75 9.105 0 5.4525 5.1825 4.695"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

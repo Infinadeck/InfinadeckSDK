@@ -1,0 +1,396 @@
+$control-height = 30px
+
+.root
+  absolute left bottom
+  top $topBar-height - 1
+  background-color $ui-noteList-backgroundColor
+
+.item
+  position relative
+  padding 0 20px
+  user-select none
+  cursor pointer
+  background-color $ui-noteList-backgroundColor
+  transition 0.2s
+  &:hover
+    background-color alpha($ui-button--active-backgroundColor, 20%)
+    .item-title
+    .item-title-icon
+    .item-bottom-time
+      transition 0.15s
+      color $ui-text-color
+    .item-bottom-tagList-item
+      background-color alpha(white, 0.6)
+      color $ui-text-color
+    .item-star
+      color $ui-favorite-star-button-color
+  &:active
+    background-color alpha($ui-button--active-backgroundColor, 40%)
+    color $ui-text-color
+    .item-title
+    .item-title-icon
+    .item-bottom-time
+      transition 0.15s
+      color $ui-text-color
+    .item-bottom-tagList-item
+      background-color alpha(white, 0.6)
+      color $ui-text-color
+
+.item-wrapper
+  padding 15px 0
+  border-bottom $ui-border
+  position relative
+
+.item--active
+  @extend .item
+  background-color alpha($ui-button--active-backgroundColor, 60%)
+  color $ui-text-color
+  .item-title
+  .item-title-empty
+  .item-bottom-tagList-empty
+  .item-bottom-time
+  .item-title-icon
+    color $ui-text-color
+  .item-bottom-tagList-item
+    background-color alpha(white, 0.6)
+    color $ui-text-color
+  .item-wrapper
+    border-color transparent
+  .item-star
+    color $ui-favorite-star-button-color
+  &:hover
+    background-color alpha($ui-button--active-backgroundColor, 40%)
+    color #e74c3c
+    .menu-button-label
+      color $ui-text-color
+  &:active, &:active:hover
+    background-color alpha($ui-button--active-backgroundColor, 40%)
+    color #e74c3c
+    .menu-button-label
+      color $ui-text-color
+
+.item-title-icon
+  position relative
+  font-size 12px
+  color $ui-inactive-text-color
+  top 2px
+
+.item-title
+  font-size 15px
+  font-weight 700
+  position relative
+  top -12px
+  left 20px
+  padding 0px 15px 0px 0px
+  margin-bottom 4px
+  overflow ellipsis
+  color $ui-inactive-text-color
+
+.item-title-empty
+  font-weight normal
+  color $ui-inactive-text-color
+
+.item-middle
+  font-size 13px
+  padding-left 2px
+  padding-bottom 2px
+
+.item-middle-time
+  color $ui-inactive-text-color
+  display inline-block
+
+.item-middle-app-meta
+  float right
+  .item-middle-app-meta-label
+    opacity 0.4
+    color $ui-inactive-text-color
+    padding 0 3px
+    white-space nowrap
+    text-overflow ellipsis
+    overflow hidden
+    max-width 200px
+
+.item-bottom
+  position relative
+  bottom 0px
+  margin-top 10px
+  font-size 12px
+  line-height 20px
+  overflow ellipsis
+  display block
+
+.item-bottom-tagList
+  flex 1
+  overflow ellipsis
+  line-height 25px
+  padding-left 2px
+  margin-right 40px
+
+.item-bottom-tagList-item
+  font-size 11px
+  margin-right 8px
+  padding 0
+  box-sizing border-box
+  border-radius 2px
+  padding 4px
+  vertical-align middle
+  background-color white
+  color $ui-inactive-text-color
+
+.item-bottom-time
+  color $ui-inactive-text-color
+  font-size 13px
+  padding-left 2px
+  padding-bottom 2px
+
+.item-star
+  position absolute
+  right 2px
+  top 5px
+  color alpha($ui-favorite-star-button-color, 60%)
+  font-size 12px
+  padding 0
+  border-radius 17px
+
+.item-pin
+  position absolute
+  right 25px
+  top 7px
+  color #E54D42
+  font-size 14px
+  padding 0
+  border-radius 17px
+
+body[data-theme="white"]
+  .item
+    background-color $ui-white-noteList-backgroundColor
+    &:hover
+      background-color alpha($ui-button--active-backgroundColor, 60%)
+    &:active
+      background-color $ui-button--active-backgroundColor
+
+  .item--active
+    @extend .item
+    background-color $ui-button--active-backgroundColor
+    &:hover
+      background-color alpha($ui-button--active-backgroundColor, 60%)
+
+body[data-theme="dark"]
+  .root
+    border-color $ui-dark-borderColor
+    background-color $ui-dark-noteList-backgroundColor
+
+  .item
+    border-color $ui-dark-borderColor
+    background-color $ui-dark-noteList-backgroundColor
+    &:hover
+      transition 0.15s
+      background-color alpha($ui-dark-button--active-backgroundColor, 20%)
+      color $ui-dark-text-color
+      .item-title
+      .item-title-icon
+      .item-bottom-time
+        transition 0.15s
+        color $ui-dark-text-color
+      .item-bottom-tagList-item
+        transition 0.15s
+        background-color alpha(#fff, 20%)
+        color $ui-dark-text-color
+    &:active
+      transition 0.15s
+      background-color $ui-dark-button--active-backgroundColor
+      color $ui-dark-text-color
+      .item-title
+      .item-title-icon
+      .item-bottom-time
+        transition 0.15s
+        color $ui-dark-text-color
+      .item-bottom-tagList-item
+        transition 0.15s
+        background-color alpha(white, 10%)
+        color $ui-dark-text-color
+
+  .item-wrapper
+    border-color alpha($ui-dark-button--active-backgroundColor, 60%)
+
+  .item--active
+    border-color $ui-dark-borderColor
+    background-color $ui-dark-button--active-backgroundColor
+    .item-wrapper
+      border-color transparent
+    .item-title
+    .item-title-icon
+    .item-bottom-time
+      color $ui-dark-text-color
+    .item-bottom-tagList-item
+      background-color alpha(white, 10%)
+      color $ui-dark-text-color
+    &:hover
+      background-color alpha($ui-dark-button--active-backgroundColor, 60%)
+      color #c0392b
+      .item-bottom-tagList-item
+        background-color alpha(#fff, 20%)
+
+  .item-title
+    color $ui-inactive-text-color
+
+  .item-title-icon
+    color $ui-inactive-text-color
+
+  .item-title-empty
+    color $ui-inactive-text-color
+
+  .item-bottom-tagList-item
+    background-color alpha($ui-dark-button--active-backgroundColor, 40%)
+    color $ui-inactive-text-color
+
+  .item-bottom-tagList-empty
+    color $ui-inactive-text-color
+    vertical-align middle
+
+
+body[data-theme="solarized-dark"]
+  .root
+    border-color $ui-solarized-dark-borderColor
+    background-color $ui-solarized-dark-noteList-backgroundColor
+
+  .item
+    border-color $ui-solarized-dark-borderColor
+    background-color $ui-solarized-dark-noteList-backgroundColor
+    &:hover
+      transition 0.15s
+      // background-color alpha($ui-solarized-dark-noteList-backgroundColor, 20%)
+      color $ui-solarized-dark-text-color
+      .item-title
+      .item-title-icon
+      .item-bottom-time
+        transition 0.15s
+        color $ui-solarized-dark-text-color
+      .item-bottom-tagList-item
+        transition 0.15s
+        background-color alpha($ui-solarized-dark-noteList-backgroundColor, 20%)
+        color $ui-solarized-dark-text-color
+    &:active
+      transition 0.15s
+      background-color $ui-solarized-dark-noteList-backgroundColor
+      color $ui-solarized-dark-text-color
+      .item-title
+      .item-title-icon
+      .item-bottom-time
+        transition 0.15s
+        color $ui-solarized-dark-text-color
+      .item-bottom-tagList-item
+        transition 0.15s
+        background-color alpha($ui-solarized-dark-noteList-backgroundColor, 10%)
+        color $ui-solarized-dark-text-color
+
+  .item-wrapper
+    border-color alpha($ui-solarized-dark-button--active-backgroundColor, 60%)
+
+  .item--active
+    border-color $ui-solarized-dark-borderColor
+    background-color $ui-solarized-dark-button-backgroundColor
+    .item-wrapper
+      border-color transparent
+    .item-title
+    .item-title-icon
+    .item-bottom-time
+      color $ui-solarized-dark-text-color
+    .item-bottom-tagList-item
+      background-color alpha(white, 10%)
+      color $ui-solarized-dark-text-color
+    &:hover
+      // background-color alpha($ui-solarized-dark-button--active-backgroundColor, 60%)
+      color #c0392b
+      .item-bottom-tagList-item
+        background-color alpha(#fff, 20%)
+
+  .item-title
+    color $ui-inactive-text-color
+
+  .item-title-icon
+    color $ui-inactive-text-color
+
+  .item-title-empty
+    color $ui-inactive-text-color
+
+  .item-bottom-tagList-item
+    background-color alpha($ui-dark-button--active-backgroundColor, 40%)
+    color $ui-inactive-text-color
+
+  .item-bottom-tagList-empty
+    color $ui-inactive-text-color
+    vertical-align middle
+
+body[data-theme="monokai"]
+  .root
+    border-color $ui-monokai-borderColor
+    background-color $ui-monokai-noteList-backgroundColor
+
+  .item
+    border-color $ui-monokai-borderColor
+    background-color $ui-monokai-noteList-backgroundColor
+    &:hover
+      transition 0.15s
+      // background-color alpha($ui-monokai-noteList-backgroundColor, 20%)
+      color $ui-monokai-text-color
+      .item-title
+      .item-title-icon
+      .item-bottom-time
+        transition 0.15s
+        color $ui-monokai-text-color
+      .item-bottom-tagList-item
+        transition 0.15s
+        background-color alpha($ui-monokai-noteList-backgroundColor, 20%)
+        color $ui-monokai-text-color
+    &:active
+      transition 0.15s
+      background-color $ui-monokai-noteList-backgroundColor
+      color $ui-monokai-text-color
+      .item-title
+      .item-title-icon
+      .item-bottom-time
+        transition 0.15s
+        color $ui-monokai-text-color
+      .item-bottom-tagList-item
+        transition 0.15s
+        background-color alpha($ui-monokai-noteList-backgroundColor, 10%)
+        color $ui-monokai-text-color
+
+  .item-wrapper
+    border-color alpha($ui-monokai-button-backgroundColor, 60%)
+
+  .item--active
+    border-color $ui-monokai-borderColor
+    background-color $ui-monokai-button-backgroundColor
+    .item-wrapper
+      border-color transparent
+    .item-title
+    .item-title-icon
+    .item-bottom-time
+      color $ui-monokai-text-color
+    .item-bottom-tagList-item
+      background-color alpha(white, 10%)
+      color $ui-monokai-text-color
+    &:hover
+      // background-color alpha($ui-monokai-button--active-backgroundColor, 60%)
+      color #c0392b
+      .item-bottom-tagList-item
+        background-color alpha(#fff, 20%)
+
+  .item-title
+    color $ui-inactive-text-color
+
+  .item-title-icon
+    color $ui-inactive-text-color
+
+  .item-title-empty
+    color $ui-inactive-text-color
+
+  .item-bottom-tagList-item
+    background-color alpha($ui-dark-button--active-backgroundColor, 40%)
+    color $ui-inactive-text-color
+
+  .item-bottom-tagList-empty
+    color $ui-inactive-text-color
+    vertical-align middle

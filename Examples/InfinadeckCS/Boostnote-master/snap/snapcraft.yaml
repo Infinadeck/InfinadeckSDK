@@ -1,0 +1,48 @@
+name: boostnote
+version: '0.1'
+summary: A note-taking app for programmers
+description: |
+  Boostnote is an open source note-taking app made for programmers just like you. https://boostnote.io
+  https://github.com/BoostIO/Boostnote
+
+grade: stable
+confinement: strict
+
+apps:
+  asmstnote:
+    command: desktop-launch $SNAP/etc/boostnote/Boostnote
+    plugs:
+     - browser-support
+     - network
+     - unity7
+     - gsettings
+
+parts:
+  src:
+    plugin: nodejs
+    source: .
+
+  deps:
+    plugin: nil
+    stage-packages:
+      - libgconf-2-4
+      - libnss3
+      - libxss1
+      - fontconfig-config
+
+  desktop-integration:
+    plugin: nil
+    stage-packages:
+      - libappindicator1
+      - libdbusmenu-glib4
+      - libnotify4
+      - libunity9
+
+  launcher:
+    plugin: dump
+    source: .
+    stage:
+      - etc/boostnote
+    organize:
+      dist/Boostnote-linux-x64: etc/boostnote
+    after: [desktop-glib-only]

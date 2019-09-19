@@ -1,0 +1,418 @@
+@import '../vars'
+
+themeDarkBackground = darken(#21252B, 10%)
+themeDarkModal = darken(#21252B, 10%)
+themeDarkList = #282C34
+themeDarkPreview = #282C34
+themeDarkSidebar = darken(#21252B, 10%)
+themeDarkText = #DDDDDD
+themeDarkBorder = lighten(themeDarkBackground, 20%)
+themeDarkTopicColor = #369dcd
+themeDarkTooltip = rgba(0, 0, 0, 0.7)
+themeDarkFocusText = #FFFFFF
+themeDarkFocusButton = lighten(themeDarkTopicColor, 30%)
+themeDarkBoxShadow = alpha(lighten(themeDarkTopicColor, 10%), 0.4);
+themeDarkTableOdd = themeDarkPreview
+themeDarkTableEven = darken(themeDarkPreview, 10%)
+themeDarkTableHead = themeDarkTableEven
+themeDarkTableBorder = themeDarkBorder
+themeDarkModalButtonDefault = themeDarkPreview
+themeDarkModalButtonDanger = #BF360C
+
+body[data-theme="dark"]
+  background-color themeDarkBackground
+
+  .Main
+    .ArticleNavigator .userInfo .settingBtn .tooltip,
+    .ArticleNavigator .ArticleNavigator-folders .ArticleNavigator-folders-header .addBtn .tooltip,
+    .ArticleTopBar>.ArticleTopBar-left>.ArticleTopBar-left-search .tooltip,
+    .ArticleTopBar>.ArticleTopBar-left .ArticleTopBar-left-control button.ArticleTopBar-left-control-new-post-button .tooltip
+    .ArticleTopBar>.ArticleTopBar-right>button .tooltip,
+    .ArticleTopBar>.ArticleTopBar-right>.ArticleTopBar-right-links-button-dropdown,
+    .ArticleDetail .ArticleDetail-info .ArticleDetail-info-control>button .tooltip,
+    .ArticleDetail .ArticleDetail-info .ArticleDetail-info-control .ShareButton-open-button .tooltip {
+      background-color themeDarkTooltip
+    }
+
+    .ArticleNavigator
+      border-color lighten(themeDarkBorder, 10%)
+      background-color themeDarkSidebar
+
+      .userInfo
+        border-color themeDarkBorder
+
+        .userName
+          color themeDarkText
+
+      .ArticleNavigator-folders
+        border-color lighten(themeDarkBorder, 10%)
+        background-color themeDarkSidebar
+
+        .ArticleNavigator-folders-header
+          border-color themeDarkBorder
+
+          .title
+            color themeDarkText
+
+        .folderList,
+        .folderList>button
+          color themeDarkText
+
+        .folderList>button
+          transition 0.1s
+
+          &:hover
+            background-color lighten(themeDarkSidebar, 10%)
+
+          &.active,
+          $:active
+            background-color darken(brandColor, 15%)
+
+      .userInfo .settingBtn,
+      .ArticleNavigator-folders .ArticleNavigator-folders-header .addBtn
+        transition 0.1s
+        color themeDarkText
+        border none
+        background-color lighten(themeDarkBackground, 10%)
+
+      .userInfo .settingBtn:hover,
+      .ArticleNavigator-folders .ArticleNavigator-folders-header .addBtn:hover
+        background-color themeDarkTopicColor
+
+      .userInfo .settingBtn:focus,
+      .ArticleNavigator-folders .ArticleNavigator-folders-header .addBtn:focus
+        background-color darken(themeDarkTopicColor, 20%)
+
+    .ArticleTopBar
+      color themeDarkText
+      background-color themeDarkBackground
+
+      .ArticleTopBar-left
+        .ArticleTopBar-left-search input
+          color themeDarkText
+          background-color lighten(themeDarkBackground, 10%)
+
+        .ArticleTopBar-left-control button.ArticleTopBar-left-control-new-post-button
+          color themeDarkText
+          background-color lighten(themeDarkBackground, 10%)
+
+          &:hover
+            color themeDarkText
+            background-color themeDarkTopicColor
+
+          &:focus
+            color themeDarkText
+            background-color darken(themeDarkTopicColor, 20%)
+
+      .ArticleTopBar-right
+        &>button
+          color themeDarkText
+          border none
+          background-color lighten(themeDarkBackground, 10%)
+
+          &:hover
+            color themeDarkText
+            background-color themeDarkTopicColor
+
+          &:focus
+            color themeDarkText
+            background-color darken(themeDarkTopicColor, 20%)
+
+    .ArticleList
+      color themeDarkText
+      border-color themeDarkBorder
+      background-color themeDarkList
+
+      .ArticleList-item
+        color themeDarkText
+        background-color themeDarkList
+
+        &:hover
+          background-color lighten(themeDarkList, 5%)
+
+        .ArticleList-item-top
+          .folderName
+            color darken(themeDarkText, 15%)
+
+      .divider
+        border-color themeDarkBorder
+
+    .ArticleDetail
+      color themeDarkText
+      border-color themeDarkBorder
+      background-color themeDarkBackground
+
+      .ArticleDetail-info
+        .ArticleDetail-info-folder
+          color themeDarkText
+          background-color lighten(themeDarkBackground, 10%)
+
+        .ArticleDetail-info-row2 .TagSelect .TagSelect-tags
+          border-color themeDarkBorder
+          background-color themeDarkBackground
+
+          input
+            color themeDarkText
+
+        .ArticleDetail-info-control
+          &>button,
+          & .ShareButton-open-button
+            transition 0.1s
+            color themeDarkText
+            border none
+            background-color lighten(themeDarkBackground, 10%)
+
+          &>button:hover,
+          & .ShareButton-open-button:hover
+            background-color themeDarkTopicColor
+
+          &>button:focus,
+          & .ShareButton-open-button:focus
+            background-color darken(themeDarkTopicColor, 20%)
+
+          & .ShareButton-dropdown
+            color themeDarkText
+            box-shadow 0px 0px 10px 1px themeDarkBoxShadow;
+            border 1px solid themeDarkBorder;
+            background-color themeDarkBackground
+
+          & .ShareButton-dropdown>button
+            color themeDarkText
+
+            &:hover
+              background-color darken(themeDarkTopicColor, 20%)
+
+      .ArticleDetail-panel
+        border-color themeDarkBackground
+
+        .ArticleDetail-panel-header,
+        .ArticleDetail-panel-header .ArticleDetail-panel-header-title input
+          color themeDarkText
+          border-color themeDarkBorder
+          background-color themeDarkPreview
+
+        .ArticleEditor
+          .CodeEditor
+            border-color themeDarkBorder
+            border-radius 0
+
+        &>.ArticleDetail-panel-header .ArticleDetail-panel-header-mode
+          transition 0.1s
+          color themeDarkText
+          background-color lighten(themeDarkBackground, 10%)
+
+          input
+            color themeDarkText
+
+          &.idle
+            border-color themeDarkBorder
+            background-color themeDarkPreview
+
+          &.idle:hover
+            background-color themeDarkTopicColor
+
+          &.edit .ModeSelect-options
+            color themeDarkText
+            border-color themeDarkBackground
+            background-color themeDarkBackground
+
+            .ModeSelect-options-item
+              &:hover
+                color lighten(themeDarkText, 100%)
+                background-color darken(themeDarkTopicColor, 20%)
+
+  .ModalBase
+    .modal
+      color themeDarkText
+      background-color themeDarkModal
+      box-shadow 0px 0px 10px 1px themeDarkBoxShadow;
+
+      input
+        color themeDarkText
+        border-color lighten(themeDarkBackground, 10%)
+        background-color lighten(themeDarkBackground, 10%)
+
+        &:hover
+          border-color themeDarkBorder
+
+        &:focus
+          border-color themeDarkTopicColor
+
+      button
+        &:hover
+          background-color lighten(themeDarkBackground, 10%)
+
+    .CreateNewFolder.modal
+      .closeBtn
+        transition 0.1s
+        border-radius 24px
+        color themeDarkText
+
+        &:hover
+          background-color darken(#BF360C, 10%)
+
+      .confirmBtn
+        background-color darken(brandColor, 10%)
+
+        &:hover
+          background-color brandColor
+
+    .DeleteArticleModal.modal
+      .control
+        button
+          transition 0.1s
+          color themeDarkText
+          border-color lighten(themeDarkModalButtonDefault, 20%)
+          background-color themeDarkModalButtonDefault
+
+          &:hover
+            background-color: lighten(themeDarkModalButtonDefault, 10%)
+
+          &:focus
+            border-color themeDarkTopicColor
+
+          &.danger
+            background-color themeDarkModalButtonDanger
+            border-color lighten(themeDarkModalButtonDanger, 30%)
+
+            &:hover
+              background-color: lighten(themeDarkModalButtonDanger, 10%)
+
+            &:focus
+              border-color lighten(themeDarkModalButtonDanger, 50%)
+
+    .Preferences.modal
+      .sectionInput input,
+      .sectionSelect select
+      .sectionMultiSelect .sectionMultiSelect-input select
+        color themeDarkText
+        border-color lighten(themeDarkBackground, 10%)
+        background-color lighten(themeDarkBackground, 10%)
+
+        &:hover
+          border-color themeDarkBorder
+
+        &:focus
+          border-color themeDarkTopicColor
+
+      .header
+        border-color themeDarkBorder
+        background-color darken(themeDarkModal, 40%)
+
+      .nav
+        border-color themeDarkBorder
+        background-color darken(themeDarkModal, 20%)
+
+        &>button
+          &:hover
+            color themeDarkFocusText
+            background-color lighten(themeDarkModal, 10%)
+
+          &.active,
+          &:active
+            background-color darken(brandColor, 15%)
+
+      .section
+        border-color themeDarkBorder
+
+      &>.content
+        &.AppSettingTab
+          .description
+            code
+              color themeDarkText
+              border-color darken(themeDarkBorder, 10%)
+              background-color lighten(themeDarkPreview, 5%)
+
+        &.FolderSettingTab
+          .folderTable
+            &>div
+              border-color themeDarkBorder
+
+              &:last-child
+                border-color transparent
+
+            &>div.FolderRow
+              .sortBtns button
+                transition 0.1s
+                color themeDarkText
+
+                &:hover
+                  color themeDarkFocusButton
+
+              .folderColor
+                &>button,
+                .options
+                  color themeDarkText
+                  border-color themeDarkBorder
+
+                &>button
+                  border-color lighten(themeDarkBackground, 10%)
+                  background-color lighten(themeDarkBackground, 10%)
+
+                  &:hover
+                    border-color themeDarkBorder
+
+                  &:focus
+                    border-color themeDarkTopicColor
+
+                .options
+                  background-color themeDarkBackground
+
+            &>div.FolderRow .folderName input,
+            &>div.newFolder .folderName input
+                color themeDarkText
+                border-color lighten(themeDarkBackground, 10%)
+                background-color lighten(themeDarkBackground, 10%)
+
+                &:hover
+                  border-color themeDarkBorder
+
+                &:focus
+                  border-color themeDarkTopicColor
+
+            .folderControl
+              button
+                transition 0.1s
+                color themeDarkText
+
+                &:hover
+                  color themeDarkFocusButton
+
+  .ArticleDetail-panel
+    border-radius 0
+
+  // Markdown Preview
+  .ArticleDetail .ArticleDetail-panel .ArticleEditor
+    .MarkdownPreview
+      color themeDarkText
+      border-color themeDarkBorder
+      background-color themeDarkPreview
+
+      a:hover
+        background-color alpha(lighten(brandColor, 30%), 0.2) !important
+
+      code
+        border-color darken(themeDarkBorder, 10%)
+        background-color lighten(themeDarkPreview, 5%)
+
+      pre
+        code
+          background-color transparent
+
+      table
+        thead
+          tr
+            background-color themeDarkTableHead
+          th
+            border-color themeDarkTableBorder
+            &:last-child
+              border-right solid 1px themeDarkTableBorder
+        tbody
+          tr:nth-child(2n + 1)
+            background-color themeDarkTableOdd
+          tr:nth-child(2n)
+            background-color themeDarkTableEven
+          td
+            border-color themeDarkTableBorder
+            &:last-child
+              border-right solid 1px themeDarkTableBorder

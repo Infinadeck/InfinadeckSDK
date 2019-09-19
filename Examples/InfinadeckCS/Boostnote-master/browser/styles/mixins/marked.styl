@@ -1,0 +1,172 @@
+marked()
+  font-size 14px
+  div.math-rendered
+    text-align center
+  .math-failed
+    background-color alpha(red, 0.1)
+    color darken(red, 15%)
+    padding 5px
+    margin 5px 0
+    border-radius 5px
+  sup
+    position relative
+    top -.4em
+    font-size 0.8em
+    vertical-align top
+  sub
+    position relative
+    bottom -.4em
+    font-size 0.8em
+    vertical-align top
+  a
+    color brandColor
+    text-decoration none
+    padding 0 5px
+    border-radius 5px
+    margin -5px
+    transition .1s
+    display inline-block
+    img
+      vertical-align sub
+    &:hover
+      color lighten(brandColor, 5%)
+      text-decoration underline
+      background-color alpha(#FFC95C, 0.3)
+    &:visited
+      color brandColor
+    &.lineAnchor
+      padding 0
+      margin 0
+      display block
+      font-size 0
+      height 0
+  hr
+    border-top none
+    border-bottom solid 1px borderColor
+    margin 15px 0
+  h1, h2, h3, h4, h5, h6
+    margin 0 0 15px
+    font-weight 600
+  *:not(a.lineAnchor) + h1, *:not(a.lineAnchor) + h2, *:not(a.lineAnchor) + h3, *:not(a.lineAnchor) + h4, *:not(a.lineAnchor) + h5, *:not(a.lineAnchor) + h6
+    margin-top 25px
+  h1
+    font-size 1.8em
+    border-bottom solid 2px borderColor
+    line-height 2em
+  h2
+    font-size 1.66em
+    line-height 1.8em
+  h3
+    font-size 1.33em
+    line-height 1.6625em
+  h4
+    font-size 1.15em
+    line-height 1.4375em
+  h5
+    font-size 1em
+    line-height 1.25em
+  h6
+    font-size 0.8em
+    line-height 1em
+
+  *:not(a.lineAnchor) + p, *:not(a.lineAnchor) + blockquote, *:not(a.lineAnchor) + ul, *:not(a.lineAnchor) + ol, *:not(a.lineAnchor) + pre
+    margin-top 15px
+  p
+    line-height 1.9em
+    margin 0 0 15px
+  img
+    max-width 100%
+  strong, b
+    font-weight bold
+  em, i
+    font-style italic
+  s, del, strike
+    text-decoration line-through
+  u
+    text-decoration underline
+  blockquote
+    border-left solid 4px brandBorderColor
+    margin 0 0 15px
+    padding 0 25px
+  ul
+    list-style-type disc
+    padding-left 25px
+    margin-bottom 15px
+    li
+      display list-item
+      line-height 1.8em
+    &>li>ul, &>li>ol
+      margin 0
+    &>li>ul
+      list-style-type circle
+      &>li>ul
+        list-style-type square
+  ol
+    list-style-type decimal
+    padding-left 25px
+    margin-bottom 15px
+    li
+      display list-item
+      line-height 1.8em
+    &>li>ul, &>li>ol
+      margin 0
+  code
+    font-family Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace
+    padding 2px 4px
+    border solid 1px alpha(borderColor, 0.3)
+    border-radius 4px
+    font-size 0.9em
+    text-decoration none
+    margin-right 2px
+  *:not(a.lineAnchor) + code
+    margin-left 2px
+  pre
+    padding 5px
+    border solid 1px alpha(borderColor, 0.3)
+    border-radius 5px
+    overflow-x auto
+    margin 0 0 15px
+    line-height 1.35
+    code
+      margin 0
+      padding 0
+      border none
+      border-radius 0
+      pre
+        border none
+        margin -5px
+    &>span.lineNumber
+      font-family Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace
+      display none
+      float left
+      margin 0 0.5em 0 -0.5em
+      border-right 1px solid
+      text-align right
+      &>span
+        display block
+        padding 0 .5em 0 1em
+  table
+    width 100%
+    margin 15px 0 25px
+    thead
+      tr
+        background-color tableHeadBgColor
+      th
+        border-style solid
+        padding 15px 5px
+        border-width 1px 0 2px 1px
+        border-color borderColor
+        &:last-child
+          border-right solid 1px borderColor
+    tbody
+      tr:nth-child(2n + 1)
+        background-color tableOddBgColor
+      tr:nth-child(2n)
+        background-color tableEvenBgColor
+      td
+        border-style solid
+        padding 15px 5px
+        border-width 0 0 1px 1px
+        border-color borderColor
+        &:last-child
+          border-right solid 1px borderColor

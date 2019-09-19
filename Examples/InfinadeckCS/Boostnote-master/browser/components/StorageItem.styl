@@ -1,0 +1,159 @@
+.root
+  width 100%
+  user-select none
+
+.folderList-item
+  display flex
+  width 100%
+  height 34px
+  background-color transparent
+  color $ui-inactive-text-color
+  padding 0
+  text-align left
+  border none
+  overflow ellipsis
+  font-size 14px
+  align-items: center
+  &:first-child
+    margin-top 0
+  &:hover
+    color #1EC38B;
+    background-color alpha($ui-button-default--active-backgroundColor, 20%)
+    transition background-color 0.15s
+  &:active
+    color $$ui-button-default-color
+    background-color alpha($ui-button-default--active-backgroundColor, 20%)
+
+.folderList-item--active
+  @extend .folderList-item
+  color #1EC38B
+  background-color alpha($ui-button-default--active-backgroundColor, 20%)
+  &:hover
+    color #1EC38B;
+    background-color alpha($ui-button-default--active-backgroundColor, 50%)
+
+.folderList-item-name
+  display block
+  flex 1
+  padding-right: 10px
+  border-width 0 0 0 2px
+  border-style solid
+  border-color transparent
+  overflow hidden
+  text-overflow ellipsis
+
+.folderList-item-noteCount
+  float right
+  line-height 26px
+  padding-right 15px
+  font-size 13px
+
+.folderList-item-tooltip
+  tooltip()
+  position fixed
+  padding 0 10px
+  left 44px
+  z-index 10
+  pointer-events none
+  opacity 0
+  border-top-right-radius 2px
+  border-bottom-right-radius 2px
+  height 34px
+  line-height 32px
+
+.folderList-item:hover, .folderList-item--active:hover
+  .folderList-item-tooltip
+    opacity 1
+
+.folderList-item-name--folded
+  @extend .folderList-item-name
+  padding-left 7px
+  .folderList-item-icon
+    font-size 9px
+
+.folderList-item-icon
+  padding-right: 10px
+
+.folderList-item-reorder
+  font-size: 9px
+  padding: 10px 8px 10px 9px;
+  color: rgba(147, 147, 149, 0.3)
+  cursor: ns-resize
+  &:before
+    content: "\f142 \f142"
+
+body[data-theme="white"]
+  .folderList-item
+    color $ui-inactive-text-color
+    &:hover
+      color $ui-text-color
+      background-color alpha($ui-button--active-backgroundColor, 20%)
+      transition background-color 0.15s
+    &:active
+      color $ui-text-color
+      background-color $ui-button--active-backgroundColor
+
+  .folderList-item--active
+    @extend .folderList-item
+    color $ui-text-color
+    background-color $ui-button--active-backgroundColor
+    &:hover
+      color $ui-text-color
+      background-color alpha($ui-button--active-backgroundColor, 50%)
+
+body[data-theme="dark"]
+  .folderList-item
+    &:hover
+      background-color alpha($ui-dark-button--active-backgroundColor, 20%)
+      color $ui-dark-text-color
+    &:active
+      color $ui-dark-text-color
+      background-color $ui-dark-button--active-backgroundColor
+
+  .folderList-item--active
+    @extend .folderList-item
+    color $ui-dark-text-color
+    background-color $ui-dark-button--active-backgroundColor
+    &:active
+      background-color alpha($ui-dark-button--active-backgroundColor, 50%)
+    &:hover
+      color $ui-dark-text-color
+      background-color alpha($ui-dark-button--active-backgroundColor, 50%)
+
+body[data-theme="solarized-dark"]
+  .folderList-item
+    &:hover
+      background-color $ui-solarized-dark-button-backgroundColor
+      color $ui-solarized-dark-text-color
+    &:active
+      color $ui-solarized-dark-text-color
+      background-color $ui-solarized-dark-button-backgroundColor
+
+  .folderList-item--active
+    @extend .folderList-item
+    color $ui-solarized-dark-text-color
+    background-color $ui-solarized-dark-button-backgroundColor
+    &:active
+      background-color $ui-solarized-dark-button-backgroundColor
+    &:hover
+      color $ui-solarized-dark-text-color
+      background-color $ui-solarized-dark-button-backgroundColor
+
+body[data-theme="monokai"]
+  .folderList-item
+    &:hover
+      background-color $ui-monokai-button-backgroundColor
+      color $ui-monokai-text-color
+    &:active
+      color $ui-monokai-text-color
+      background-color $ui-monokai-button-backgroundColor
+
+  .folderList-item--active
+    @extend .folderList-item
+    color $ui-monokai-text-color
+    background-color $ui-monokai-button-backgroundColor
+    &:active
+      background-color $ui-monokai-button-backgroundColor
+    &:hover
+      color $ui-monokai-text-color
+      background-color $ui-monokai-button-backgroundColor

@@ -1,0 +1,100 @@
+.root
+  position relative
+  margin-bottom 15px
+
+.header
+  height 35px
+  line-height 30px
+  padding 0 10px 5px
+  box-sizing border-box
+  border-bottom $default-border
+  margin-bottom 5px
+
+.header-label
+  float left
+  cursor pointer
+  &:hover
+    .header-label-editButton
+      opacity 1
+
+.header-label-path
+  color $ui-inactive-text-color
+  font-size 10px
+  margin 0 5px
+.header-label-editButton
+  color $ui-text-color
+  opacity 0
+  transition 0.2s
+.header-label--edit
+  @extend .header-label
+
+.header-label-input
+  height 25px
+  box-sizing border-box
+  vertical-align middle
+  border $ui-border
+  border-radius 2px
+  padding 0 5px
+  outline none
+
+.header-control
+  float right
+
+.header-control-button
+  width 30px
+  height 25px
+  colorDefaultButton()
+  border-radius 2px
+  border $ui-border
+  margin-right 5px
+  position relative
+  &:last-child
+    margin-right 0
+  &:hover
+    .header-control-button-tooltip
+      opacity 1
+
+.header-control-button-tooltip
+  tooltip()
+  position absolute
+  opacity 0
+  padding 5px
+  top 25px
+  z-index 10
+  white-space nowrap
+
+body[data-theme="dark"]
+  .header
+    border-color $ui-dark-borderColor
+
+  .header-label-path
+    color $ui-dark-inactive-text-color
+  .header-label-editButton
+    color $ui-dark-text-color
+
+  .header-control-button
+    colorDarkDefaultButton()
+    border-color $ui-dark-borderColor
+
+  .header-control-button-tooltip
+    tooltip()
+    position absolute
+    opacity 0
+    padding 5px
+    top 25px
+    z-index 10
+    white-space nowrap
+
+body[data-theme="solarized-dark"]
+  .header
+    border-color $ui-solarized-dark-button-backgroundColor
+
+  .header-label-path
+    color $ui-solarized-dark-text-color
+  .header-label-editButton
+    color $ui-solarized-dark-text-color
+
+  .header-control-button
+    border-color $ui-solarized-dark-button-backgroundColor
+    background-color $ui-solarized-dark-button-backgroundColor
+    color $ui-solarized-dark-text-color

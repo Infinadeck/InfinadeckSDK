@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-newnote3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-448.000000, -153.000000)">
+            <g id="icon-newnote3" transform="translate(446.000000, 151.000000)">
+                <rect id="Rectangle-7" fill="#BFBFBF" opacity="0" x="0" y="0" width="20" height="20"></rect>
+                <g id="edit" transform="translate(3.000000, 3.000000)" stroke="#8A8C8D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12.6,8.862 L12.6,12.6 C12.6,13.3731986 11.9731986,14 11.2,14 L1.4,14 C0.62680135,14 0,13.3731986 0,12.6 L0,2.8 C-1.55431223e-16,2.02680135 0.62680135,1.4 1.4,1.4 L5.138,1.4" id="Shape"></path>
+                    <polygon id="Shape" points="11.2 0 14 2.8 7 9.8 4.2 9.8 4.2 7"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

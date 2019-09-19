@@ -1,0 +1,140 @@
+$control-height = 30px
+
+.root
+  absolute left bottom
+  top $topBar-height - 1
+  background-color $ui-noteList-backgroundColor
+
+.control
+  absolute top left right
+  user-select none
+  height $control-height
+  font-size 12px
+  line-height 25px
+  display flex
+  background-color $ui-noteList-backgroundColor
+  color $ui-inactive-text-color
+
+.control-sortBy
+  flex 1
+  padding-left 22px
+
+.control-sortBy-select
+  appearance: none;
+  margin-left 5px
+  color $ui-inactive-text-color
+  padding 0
+  border none
+  background-color transparent
+  outline none
+  cursor pointer
+  font-size 12px
+  &:hover
+    transition 0.2s
+    color $ui-text-color
+
+.control-button-area
+  margin-right 12px
+
+.control-button
+  width 25px
+  padding 0
+  background-color transparent
+  border none
+  color alpha($ui-inactive-text-color, 60%)
+  transition 0.15s
+  &:active, &:active:hover
+    color $ui-inactive-text-color
+  &:hover
+    color $ui-inactive-text-color
+
+.control-button--active
+  @extend .control-button
+  color $ui-inactive-text-color
+  &:hover
+    color $ui-inactive-text-color
+
+.list
+  absolute left right bottom
+  top $control-height
+  overflow auto
+
+body[data-theme="white"]
+  .root
+    background-color $ui-white-noteList-backgroundColor
+
+  .control
+    background-color $ui-white-noteList-backgroundColor
+
+body[data-theme="dark"]
+  .root
+    border-color $ui-dark-borderColor
+    background-color $ui-dark-noteList-backgroundColor
+
+  .control
+    background-color $ui-dark-noteList-backgroundColor
+    border-color $ui-dark-borderColor
+
+  .control-sortBy-select
+    &:hover
+      transition 0.2s
+      color $ui-dark-text-color
+
+  .control-button
+    color $ui-dark-inactive-text-color
+    &:hover
+      color $ui-dark-text-color
+  
+  .control-button--active
+    color $ui-dark-text-color
+    &:active
+      color $ui-dark-text-color
+
+
+body[data-theme="solarized-dark"]
+  .root
+    border-color $ui-solarized-dark-borderColor
+    background-color $ui-solarized-dark-noteList-backgroundColor
+
+  .control
+    background-color $ui-solarized-dark-noteList-backgroundColor
+    border-color $ui-solarized-dark-borderColor
+
+  .control-sortBy-select
+    &:hover
+      transition 0.2s
+      color $ui-solarized-dark-text-color
+
+  .control-button
+    color $ui-solarized-dark-inactive-text-color
+    &:hover
+      color $ui-solarized-dark-text-color
+  
+  .control-button--active
+    color $ui-solarized-dark-text-color
+    &:active
+      color $ui-solarized-dark-text-color
+
+body[data-theme="monokai"]
+  .root
+    border-color $ui-monokai-borderColor
+    background-color $ui-monokai-noteList-backgroundColor
+
+  .control
+    background-color $ui-monokai-noteList-backgroundColor
+    border-color $ui-monokai-borderColor
+
+  .control-sortBy-select
+    &:hover
+      transition 0.2s
+      color $ui-monokai-text-color
+
+  .control-button
+    color $ui-monokai-inactive-text-color
+    &:hover
+      color $ui-monokai-text-color
+
+  .control-button--active
+    color $ui-monokai-text-color
+    &:active
+      color $ui-monokai-text-color

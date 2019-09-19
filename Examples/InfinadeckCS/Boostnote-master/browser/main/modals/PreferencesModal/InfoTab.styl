@@ -1,0 +1,77 @@
+@import('./Tab')
+
+.root
+  padding 15px
+  white-space pre
+  line-height 1.4
+  color alpha($ui-text-color, 90%)
+  width 100%
+  font-size 14px
+
+.top
+  text-align left
+  margin-bottom 20px
+
+.icon-space
+  margin 20px 0
+  height 100px
+
+.icon
+  display inline-block
+  vertical-align middle
+
+.icon-right
+  display inline-block
+  vertical-align middle
+  margin-left 20px
+
+.appId
+  font-size 24px
+  margin-bottom 13px
+
+.description
+  font-size 14px
+
+.list
+  list-style square
+  padding-left 2em
+  li
+    white-space normal
+    padding-bottom 10px
+  a
+    color #4E8EC6
+    text-decoration none
+
+.separate-line
+  margin 40px 0
+
+.policy
+  width 100%
+  font-size 20px
+  margin-bottom 10px
+
+.policy-submit
+  margin-top 10px
+
+.policy-confirm
+  margin-top 10px
+  font-size 12px
+
+body[data-theme="dark"]
+  .root
+    color alpha($tab--dark-text-color, 80%)
+    
+
+body[data-theme="solarized-dark"]
+  .root
+    color $ui-solarized-dark-text-color
+.list
+  a
+    color $ui-solarized-dark-active-color
+
+body[data-theme="monokai"]
+  .root
+    color $ui-monokai-text-color
+.list
+  a
+    color $ui-monokai-active-color

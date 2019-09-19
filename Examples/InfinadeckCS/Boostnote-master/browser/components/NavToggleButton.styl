@@ -1,0 +1,26 @@
+.navToggle
+  navButtonColor()
+  display block
+  position absolute
+  left 5px
+  bottom 5px
+  border-radius 16.5px
+  height 34px
+  width 34px
+  line-height 32px
+  padding 0
+  &:hover
+    border: 1px solid #1EC38B;
+    background-color: alpha(#1EC38B, 30%)
+    border-radius: 50%;
+
+body[data-theme="white"]
+  navWhiteButtonColor()
+
+body[data-theme="dark"]
+  .navToggle
+    &:hover
+      background-color alpha($ui-dark-button--active-backgroundColor, 20%)
+      transition 0.15s
+      color $ui-dark-text-color
+

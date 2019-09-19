@@ -1,0 +1,258 @@
+.root
+  position relative
+  background-color $ui-noteList-backgroundColor
+  height $topBar-height - 1
+
+.root--expanded
+  @extend .root
+
+$control-height = 34px
+
+.control
+  position absolute
+  top 13px
+  left 8px
+  right 8px
+  height $control-height
+  overflow hidden
+  display flex
+
+.control-search
+  height 32px
+  width 1px
+  flex 1
+  background-color white
+  position relative
+
+.control-search-input
+  display block
+  absolute top bottom right
+  width 100%
+  padding-left 12px
+  background-color $ui-noteList-backgroundColor
+  input
+    width 100%
+    height 100%
+    outline none
+    border none
+    color $ui-text-color
+    font-size 18px
+    padding-bottom 2px
+    background-color $ui-noteList-backgroundColor
+
+.control-search-input-clear
+  height 16px
+  width 16px
+  position absolute
+  right 40px
+  top 10px
+  z-index 300
+  border none
+  background-color transparent
+  color #999
+  &:hover .control-search-input-clear-tooltip
+    opacity 1
+
+.control-search-input-clear-tooltip
+  tooltip()
+  position fixed
+  pointer-events none
+  top 50px
+  left 433px
+  z-index 200
+  padding 5px
+  line-height normal
+  border-radius 2px
+  opacity 0
+  transition 0.1s
+
+.control-search-optionList
+  position fixed
+  z-index 200
+  width 500px
+  height 250px
+  overflow-y auto
+  background-color $modal-background
+  border-radius 2px
+  border-none
+  box-shadow 0 0 1px rgba(76,86,103,.25), 0 2px 18px rgba(31,37,50,.32)
+
+.control-search-optionList-item
+  height 50px
+  border-bottom $ui-border
+  transition background-color 0.15s
+  padding 5px
+  cursor pointer
+  overflow ellipsis
+  &:hover
+    background-color alpha(#D4D4D4, 30%)
+
+.control-search-optionList-item-folder
+  border-left 2px solid transparent
+  padding 2px 5px
+  color $ui-text-color
+  overflow ellipsis
+  font-size 12px
+  height 16px
+  margin-bottom 4px
+
+.control-search-optionList-item-folder-surfix
+  font-size 10px
+  margin-left 5px
+  color $ui-inactive-text-color
+
+.control-search-optionList-item-type
+  font-size 12px
+  color $ui-inactive-text-color
+  padding-right 3px
+
+.control-search-optionList-empty
+  height 150px
+  color $ui-inactive-text-color
+  line-height 150px
+  text-align center
+
+.control-newPostButton
+  display block
+  width 32px
+  height $control-height - 2
+  navButtonColor()
+  font-size 16px
+  line-height 28px
+  padding 0
+  &:active
+    border-color $ui-button--active-backgroundColor
+  &:hover .control-newPostButton-tooltip
+    opacity 1
+
+.control-newPostButton-tooltip
+  tooltip()
+  position fixed
+  pointer-events none
+  top 50px
+  left 433px
+  z-index 200
+  padding 5px
+  line-height normal
+  border-radius 2px
+  opacity 0
+  transition 0.1s
+
+body[data-theme="white"]
+  .root, .root--expanded
+    background-color $ui-white-noteList-backgroundColor
+
+  .control
+    border-color $ui-dark-borderColor
+
+  .control-search
+    background-color $ui-white-noteList-backgroundColor
+
+  .control-search-input
+    background-color $ui-white-noteList-backgroundColor
+    input
+      background-color $ui-white-noteList-backgroundColor
+
+body[data-theme="dark"]
+  .root, .root--expanded
+    background-color $ui-dark-noteList-backgroundColor
+
+  .control
+    border-color $ui-dark-borderColor
+  .control-search
+    background-color $dark-background-color
+
+  .control-search-icon
+    absolute top bottom left
+    line-height 32px
+    width 35px
+    color $ui-dark-inactive-text-color
+    background-color $ui-dark-noteList-backgroundColor
+
+  .control-search-input
+    background-color $ui-dark-noteList-backgroundColor
+    input
+      background-color $ui-dark-noteList-backgroundColor
+      color $ui-dark-text-color
+
+  .control-search-optionList
+    color white
+    background-color $ui-dark-button--hover-backgroundColor
+    border-color $ui-dark-borderColor
+    box-shadow 2px 2px 10px black
+
+  .control-search-optionList-item
+    border-color $ui-dark-borderColor
+    &:hover
+      background-color alpha($ui-dark-button--active-backgroundColor, 20%)
+  .control-search-optionList-item-folder
+    color $ui-dark-text-color
+  .control-search-optionList-item-folder-surfix
+    font-size 10px
+    margin-left 5px
+    color $ui-inactive-text-color
+  .control-search-optionList-item-type
+    font-size 12px
+    color $ui-inactive-text-color
+    padding-right 3px
+  .control-search-optionList-empty
+    color $ui-inactive-text-color
+
+  .control-newPostButton
+    color $ui-inactive-text-color
+    border-color $ui-dark-borderColor
+    background-color $ui-dark-noteList-backgroundColor
+    &:hover
+      transition 0.15s
+      color $ui-dark-text-color
+    &:active
+      background-color alpha($ui-dark-button--active-backgroundColor, 20%)
+      border-color $ui-dark-button--active-backgroundColor
+
+  .control-newPostButton-tooltip
+    darkTooltip()
+
+
+body[data-theme="solarized-dark"]
+  .root, .root--expanded
+    background-color $ui-solarized-dark-noteList-backgroundColor
+
+  .control
+    border-color $ui-solarized-dark-borderColor
+  .control-search
+    background-color $ui-solarized-dark-noteList-backgroundColor
+
+  .control-search-icon
+    absolute top bottom left
+    line-height 32px
+    width 35px
+    color $ui-solarized-dark-inactive-text-color
+    background-color $ui-solarized-dark-noteList-backgroundColor
+
+  .control-search-input
+    background-color $ui-solarized-dark-noteList-backgroundColor
+    input
+      background-color $ui-solarized-dark-noteList-backgroundColor
+      color $ui-solarized-dark-text-color
+
+body[data-theme="monokai"]
+  .root, .root--expanded
+    background-color $ui-monokai-noteList-backgroundColor
+
+  .control
+    border-color $ui-monokai-borderColor
+  .control-search
+    background-color $ui-monokai-noteList-backgroundColor
+
+  .control-search-icon
+    absolute top bottom left
+    line-height 32px
+    width 35px
+    color $ui-monokai-inactive-text-color
+    background-color $ui-monokai-noteList-backgroundColor
+
+  .control-search-input
+    background-color $ui-monokai-noteList-backgroundColor
+    input
+      background-color $ui-monokai-noteList-backgroundColor
+      color $ui-monokai-text-color

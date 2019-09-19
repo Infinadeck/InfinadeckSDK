@@ -1,0 +1,82 @@
+@import('../Detail/DetailVars')
+
+.root
+  position absolute
+  bottom 10px
+  right 10px
+  z-index 100
+  display flex
+
+.blank
+  flex 1
+
+.help
+  navButtonColor()
+  height 24px
+  width 24px
+  border-width 0 0 0 1px
+  border-style solid
+  border-color $ui-borderColor
+  &:active .update-icon
+    color white
+
+.zoom
+  navButtonColor()
+  color rgba(0,0,0,.54)
+  height 20px
+  display flex
+  padding 0
+  align-items center
+  background-color transparent
+  &:hover
+    color $ui-active-color
+  &:active
+    color $ui-active-color
+  span
+    margin-left 5px
+  
+.update
+  navButtonColor()
+  height 24px
+  border-width 0 0 0 1px
+  border-style solid
+  border-color $ui-borderColor
+  &:active .update-icon
+    color white
+
+.update-icon
+  color $brand-color
+
+body[data-theme="dark"]
+  .root
+    border-color $ui-dark-borderColor
+    box-shadow none
+
+  .zoom
+    border-color $ui-dark-borderColor
+    background-color transparent
+    color #f9f9f9
+    &:hover
+      transition 0.15s
+      color $ui-dark-text-color
+
+  .help
+    navButtonColor()
+    border-color $ui-dark-borderColor
+    border-left 1px solid $ui-dark-borderColor
+
+  .update
+    navDarkButtonColor()
+    border-color $ui-dark-borderColor
+    border-left 1px solid $ui-dark-borderColor
+
+body[data-theme="monokai"]
+   navButtonColor()
+  .zoom
+    border-color $ui-dark-borderColor
+    color $ui-monokai-text-color
+    &:hover
+      transition 0.15s
+      color $ui-monokai-active-color
+    &:active
+      color $ui-monokai-active-color
