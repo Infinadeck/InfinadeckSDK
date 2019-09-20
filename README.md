@@ -18,6 +18,12 @@ package.
 
 Using the Infinadeck desktop application and API-enabled software requires Bonjour, which must be downloaded separately. This will be included with the desktop application installer in a future update.
 
+### Installing Plugins To Game Engine
+
+[Unreal](https://youtu.be/_6YL3ZRZIZM)
+
+[Unity](https://youtu.be/WyujIBx0Mu4)
+
 ### Writing Native Applications
 
 While SDKs are provided for most common game engines, you may wish to write 
