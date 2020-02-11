@@ -68,7 +68,7 @@
     "immutable": "^3.8.1",
     "js-sequence-diagrams": "^1000000.0.6",
     "katex": "^0.9.0",
-    "lodash": "^4.11.1",
+    "lodash": "^4.17.13",
     "lodash-move": "^1.1.1",
     "markdown-it": "^6.0.1",
     "markdown-it-admonition": "^1.0.4",
