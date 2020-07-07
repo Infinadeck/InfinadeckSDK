@@ -6,7 +6,7 @@
 #include <cstdint>
 
 #define API_VERSION_MAJOR 1
-#define API_VERSION_MINOR 5
+#define API_VERSION_MINOR 6
 #define API_VERSION_BUILD 0
 
 /**
@@ -102,6 +102,11 @@ namespace Infinadeck {
   INFINADECK_API void API_CALLTYPE SetUserRotation(double w, double x, double y, double z);
 
   /**
+* Start the treadmill using tracking controls.
+*/
+  INFINADECK_API void API_CALLTYPE StartTreadmillUserControl();
+
+  /**
   * Check if connection to treadmill service has been established.
   */
   INFINADECK_API bool API_CALLTYPE CheckConnection();
@@ -118,12 +123,20 @@ namespace Infinadeck {
   INFINADECK_API void SetTreadmillRunState(bool state);
 
   /**
+* Start the treadmill in manual control mode.
+*/
+  INFINADECK_API void StartTreadmillManualControl();
+
+  /**
+* Stop the treadmill
+*/
+  INFINADECK_API void StopTreadmill();
+
+  /**
   * Returns true if the treadmill is running, and false if the treadmill is
   * stopped.
   */
   INFINADECK_API bool API_CALLTYPE GetTreadmillRunState(bool get_lock);
-
-
 
   /**
   * Get the serial number of the attached treadmill. Returns an empty string

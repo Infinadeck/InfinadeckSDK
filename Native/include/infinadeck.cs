@@ -88,6 +88,15 @@ namespace Infinadeck
         [DllImportAttribute("InfinadeckAPI", EntryPoint = "SetTreadmillRunState", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void SetTreadmillRunState(bool state);
 
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "StartTreadmillManualControl", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void StartTreadmillManualControl();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "StartTreadmillUserControl", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void StartTreadmillUserControl();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "StopTreadmill", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void StopTreadmill();
+
         [DllImportAttribute("InfinadeckAPI", EntryPoint = "CheckConnection", CallingConvention = CallingConvention.Cdecl)]
         internal static extern bool CheckConnection();
 
@@ -112,8 +121,8 @@ namespace Infinadeck
         [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetFloorSpeedMagnitude", CallingConvention = CallingConvention.Cdecl)]
         internal static extern double GetFloorSpeedMagnitude();
 
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetFloorSpeedDirection", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern double GetFloorSpeedDirection();
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetFloorSpeedAngle", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern double GetFloorSpeedAngle();
 
         [DllImportAttribute("InfinadeckAPI", EntryPoint = "SetManualSpeeds", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void SetManualSpeeds(double x, double y);
@@ -184,11 +193,11 @@ namespace Infinadeck
         /**
         * Returns the polar direction of the speed of the treadmill.
         */
-        public static double GetFloorSpeedDirection()
+        public static double GetFloorSpeedAngle()
         {
             InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
             if (!CheckConnection()) InitConnection(ref e);
-            return InfinadeckInterOp.GetFloorSpeedDirection();
+            return InfinadeckInterOp.GetFloorSpeedAngle();
         }
 
         public static void SetManualSpeeds(double x, double y)
@@ -232,6 +241,8 @@ namespace Infinadeck
             if (!CheckConnection()) InitConnection(ref e);
             InfinadeckInterOp.SetTreadmillRunState(run);
         }
+
+
 
         /**
         * Check if the treadmill is in "Calibration" mode
@@ -331,6 +342,26 @@ namespace Infinadeck
             InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
             if (!CheckConnection()) InitConnection(ref e);
             InfinadeckInterOp.SetBrake(brake);
+        }
+
+        public static void StartTreadmillManualControl()
+        {
+            InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
+            if (!CheckConnection()) InitConnection(ref e);
+            InfinadeckInterOp.StartTreadmillManualControl();
+        }
+
+        public static void StartTreadmillUserControl()
+        {
+            InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
+            if (!CheckConnection()) InitConnection(ref e);
+            InfinadeckInterOp.StartTreadmillUserControl();
+        }
+        public static void StopTreadmill()
+        {
+            InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
+            if (!CheckConnection()) InitConnection(ref e);
+            InfinadeckInterOp.StopTreadmill();
         }
     }
 }

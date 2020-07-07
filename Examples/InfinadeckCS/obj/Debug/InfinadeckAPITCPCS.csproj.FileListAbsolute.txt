@@ -1,9 +1,0 @@
-C:\Users\Infinadeck\source\repos\InfinadeckAPITCP\InfinadeckAPITCPCS\bin\Debug\InfinadeckAPITCPCS.exe.config
-C:\Users\Infinadeck\source\repos\InfinadeckAPITCP\InfinadeckAPITCPCS\bin\Debug\InfinadeckAPITCPCS.exe
-C:\Users\Infinadeck\source\repos\InfinadeckAPITCP\InfinadeckAPITCPCS\bin\Debug\InfinadeckAPITCPCS.pdb
-C:\Users\Infinadeck\source\repos\InfinadeckAPITCP\InfinadeckAPITCPCS\obj\Debug\InfinadeckAPITCPCS.csproj.CoreCompileInputs.cache
-C:\Users\Infinadeck\source\repos\InfinadeckAPITCP\InfinadeckAPITCPCS\obj\Debug\InfinadeckAPITCPCS.exe
-C:\Users\Infinadeck\source\repos\InfinadeckAPITCP\InfinadeckAPITCPCS\obj\Debug\InfinadeckAPITCPCS.pdb
-C:\Users\Infinadeck\source\repos\InfinadeckAPITCP\x64\Debug\InfinadeckAPITCPCS.exe.config
-C:\Users\Infinadeck\source\repos\InfinadeckAPITCP\x64\Debug\InfinadeckAPITCPCS.exe
-C:\Users\Infinadeck\source\repos\InfinadeckAPITCP\x64\Debug\InfinadeckAPITCPCS.pdb
