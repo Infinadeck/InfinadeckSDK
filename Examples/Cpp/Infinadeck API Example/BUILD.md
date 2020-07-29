@@ -1,6 +1,6 @@
 ## How to build this example
 - Open solution in Visual Studio and hit Build
-- Place file "InfinadeckAPI.dll" into created folder
+- Place file "InfinadeckAPI.dll" in the folder "Native\lib\win64" into created folder
 	- "x64\Debug" or "x64\Release"
 
 ## How to run this example
