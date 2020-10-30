@@ -6,8 +6,8 @@
 #include <cstdint>
 
 #define API_VERSION_MAJOR 1
-#define API_VERSION_MINOR 6
-#define API_VERSION_BUILD 0
+#define API_VERSION_MINOR 7
+#define API_VERSION_BUILD 1
 
 /**
 * Defines possible errors.
@@ -50,6 +50,29 @@ namespace Infinadeck {
     char model_number[32];
     char dll_version[32];
   };
+
+  struct PositionVector3 {
+      double x;
+      double y;
+      double z;
+  };
+
+  struct QuaternionVector4 {
+      double w;
+      double x;
+      double y;
+      double z;
+  };
+
+  struct UserPositionRotation {
+      PositionVector3 position;
+      QuaternionVector4 quaternion;
+  };
+
+  struct DiagnosticInfo {
+      SpeedVector2 v;
+  };
+
 }
 #if defined( _WIN32 )
 #define API_CALLTYPE __cdecl
@@ -183,6 +206,10 @@ namespace Infinadeck {
   INFINADECK_API double API_CALLTYPE GetDemoTimeRemaining();
 
   INFINADECK_API void API_CALLTYPE SetBrake(bool brake);
+
+  INFINADECK_API UserPositionRotation API_CALLTYPE GetUserPositionRotation();
+
+  INFINADECK_API DiagnosticInfo API_CALLTYPE GetDiagnostics();
 
   INFINADECK_API uint32_t API_CALLTYPE InitInternal(
     InfinadeckInitError* inError, bool use_local_server = false);
