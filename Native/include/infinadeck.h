@@ -6,9 +6,10 @@
 #include <cstdint>
 
 #define API_VERSION_MAJOR 1
-#define API_VERSION_MINOR 7
+#define API_VERSION_MINOR 8
 #define API_VERSION_BUILD 1
 
+#define INFINADECK_SERIAL_NUMBER_MAX_LENGTH 40
 /**
 * Defines possible errors.
 */
@@ -23,6 +24,12 @@ enum InfinadeckInitError {
   InfinadeckInitError_FailedHostResolution,
   InfinadeckInitError_FailedServerConnection,
   InfinadeckInitError_FailedServerSend,
+};
+
+enum InfinadeckAppType {
+    InfinadeckAppType_Standalone,
+    InfinadeckAppType_VRApplication,
+    InfinadeckAppType_VRServer
 };
 
 namespace Infinadeck {
@@ -48,7 +55,7 @@ namespace Infinadeck {
   struct TreadmillInfo {
     char id[32];
     char model_number[32];
-    char dll_version[32];
+    char treadmill_version[32];
   };
 
   struct PositionVector3 {
@@ -70,7 +77,10 @@ namespace Infinadeck {
   };
 
   struct DiagnosticInfo {
-      SpeedVector2 v;
+      SpeedVector2 service_distance;
+      SpeedVector2 total_distance;
+      double service_hours;
+      double total_hours;
   };
 
 }
@@ -159,21 +169,13 @@ namespace Infinadeck {
   * Returns true if the treadmill is running, and false if the treadmill is
   * stopped.
   */
-  INFINADECK_API bool API_CALLTYPE GetTreadmillRunState(bool get_lock);
+  INFINADECK_API bool API_CALLTYPE GetTreadmillRunState();
 
   /**
   * Get the serial number of the attached treadmill. Returns an empty string
   * if connected to a virtual treadmill.
   */
-  INFINADECK_API const char* API_CALLTYPE GetTreadmillSerialNumber();
-
-  /**
-  * Check whether external applications using the API is locked from making
-  * changes to treadmill state
-  *
-  * NOTE: Not currently implemented
-  */
-  INFINADECK_API bool API_CALLTYPE GetAPILock();
+  INFINADECK_API void API_CALLTYPE GetTreadmillSerialNumber(char* string, int length);
 
   /**
   * Fills a TreadmillInfo struct with information about currently connected
@@ -183,46 +185,44 @@ namespace Infinadeck {
   */
   INFINADECK_API TreadmillInfo API_CALLTYPE GetTreadmillInfo();
 
-  /**
-  * Sets the API lock, which can prevent external applications from making
-  * changes to thre treadmill's state
-  *
-  * NOTE: Not currently implemented
-  */
-  INFINADECK_API void API_CALLTYPE SetAPILock(bool locked);
-
-  /**
-  * Checks whether the treadmill is in "Demo" mode
-  *
-  * NOTE: Not currently implemented
-  */
-  INFINADECK_API bool API_CALLTYPE GetDemoMode();
-
-  /**
-  * Gets the remaining demo time, if the treadmill is in "Demo" mode
-  *
-  * NOTE: Not currently implemented
-  */
-  INFINADECK_API double API_CALLTYPE GetDemoTimeRemaining();
-
-  INFINADECK_API void API_CALLTYPE SetBrake(bool brake);
-
   INFINADECK_API UserPositionRotation API_CALLTYPE GetUserPositionRotation();
 
   INFINADECK_API DiagnosticInfo API_CALLTYPE GetDiagnostics();
 
-  INFINADECK_API uint32_t API_CALLTYPE InitInternal(
-    InfinadeckInitError* inError, bool use_local_server = false);
+  /**
+* Puts the treadmill into a "paused" state, where it will not move, but will
+* remain "enabled"
+*/
+  INFINADECK_API void API_CALLTYPE SetTreadmillPause(bool enable);
+
+  /**
+  * Checks if the treadmill is in a "paused" state.
+  */
+  INFINADECK_API bool API_CALLTYPE GetTreadmillPauseState();
+
+  /**
+  * Enables or disables the virtual ring in the user's virtual display
+  */
+  INFINADECK_API void API_CALLTYPE SetVirtualRing(bool enable);
+
+  /**
+  * Checks if the virtual ring should be displayed to the user
+  */
+  INFINADECK_API bool API_CALLTYPE GetVirtualRingEnabled();
+
+  /**
+  * Gets the difference between the treadmill's floor angle and the selected device
+  */
+  INFINADECK_API QuaternionVector4 API_CALLTYPE GetReferenceDeviceAngleDifference();
+
+  INFINADECK_API uint32_t API_CALLTYPE InitInternal(InfinadeckInitError* inError);
+  
   /**
   * Loads internal functionality.
   */
   inline void InitInfinadeckConnection(InfinadeckInitError* err) {
     *err = InfinadeckInitError_None;
     InitInternal(err);
-    if (*err != InfinadeckInitError_None) {
-      *err = InfinadeckInitError_None;
-      InitInternal(err, true);
-    }
   }
 
   INFINADECK_API uint32_t API_CALLTYPE DeInitInternal();

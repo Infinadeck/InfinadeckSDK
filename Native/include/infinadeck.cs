@@ -40,83 +40,55 @@ namespace Infinadeck
         public double r;
     }
 
-    public struct TreadmillInfo
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct TreadmillInfo
     {
-        public TreadmillInfo(char[] id, char[] model_number, char[] dll_version)
-        {
-            this.id = new string(id);
-            this.model_number = new string(model_number);
-            this.dll_version = new string(dll_version);
-        }
-        //FILL ME IN with whatever helpful metrics we want to provide (Total Deck Hours, Current Session Length, etc) and I will backfill to the actual about screen
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
         public string id;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
         public string model_number;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
         public string dll_version;
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct TreadmillInfoPayload
+    public struct PositionVector3
     {
-        public char[] id;
-        public char[] model_number;
-        public char[] dll_version;
+        public double x;
+        public double y;
+        public double z;
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    public struct QuaternionVector4
+    {
+        public double w;
+        public double x;
+        public double y;
+        public double z;
+
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct UserPositionRotation
+    {
+        public PositionVector3 position;
+        public QuaternionVector4 quaternion;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct DiagnosticInfo
+    {
+        SpeedVector2 v;
+
+    }
     public class InfinadeckInterOp
     {
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "InitInternal", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern uint InitInternal(ref InfinadeckInitError inError, bool use_server = false);
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "DeInitInternal", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern uint DeInitInternal(ref InfinadeckInitError inError);
-
         [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetFloorSpeeds", CallingConvention = CallingConvention.Cdecl)]
         internal static extern SpeedVector2 GetFloorSpeeds();
 
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "VerifyControllerVersion", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern uint VerifyControllerVersion(ref InfinadeckInitError inError);
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "VerifyInterfaceVersion", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern uint VerifyInterfaceVersion(ref InfinadeckInitError inError);
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetRing", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern Ring GetRing();
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetTreadmillRunState", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern bool GetTreadmillRunState(bool get_lock);
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "SetTreadmillRunState", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void SetTreadmillRunState(bool state);
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "StartTreadmillManualControl", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void StartTreadmillManualControl();
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "StartTreadmillUserControl", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void StartTreadmillUserControl();
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "StopTreadmill", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void StopTreadmill();
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "CheckConnection", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern bool CheckConnection();
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetAPILock", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern bool GetAPILock();
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetTreadmillInfo", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern TreadmillInfoPayload GetTreadmillInfo();
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "SetAPILock", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void SetAPILock(bool locked);
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetDemoMode", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern bool GetDemoMode();
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetDemoTimeRemaining", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern double GetDemoTimeRemaining();
-
-        [DllImportAttribute("InfinadeckAPI", EntryPoint = "SetBrake", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void SetBrake(bool brake);
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetFloorSpeedsNormalized", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern SpeedVector2 GetFloorSpeedsNormalized();
 
         [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetFloorSpeedMagnitude", CallingConvention = CallingConvention.Cdecl)]
         internal static extern double GetFloorSpeedMagnitude();
@@ -132,6 +104,60 @@ namespace Infinadeck
 
         [DllImportAttribute("InfinadeckAPI", EntryPoint = "SetUserRotation", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void SetUserRotation(double w, double x, double y, double z);
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "StartTreadmillUserControl", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void StartTreadmillUserControl();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "CheckConnection", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern bool CheckConnection();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetRing", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern Ring GetRing();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "SetTreadmillRunState", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void SetTreadmillRunState(bool state);
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "StartTreadmillManualControl", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void StartTreadmillManualControl();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "StopTreadmill", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void StopTreadmill();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetTreadmillRunState", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern bool GetTreadmillRunState(bool get_lock);
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetTreadmillSerialNumber", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void GetTreadmillSerialNumber(char[] buffer, int length);
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetTreadmillInfo", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void GetTreadmillInfo(out TreadmillInfo info);
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetUserPositionRotation", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern UserPositionRotation GetUserPositionRotation();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetDiagnostics", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern DiagnosticInfo GetDiagnostics();
+         
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "SetTreadmillPause", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void SetTreadmillPause(bool pause);
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetTreadmillPauseState", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern bool GetTreadmillPauseState();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "SetVirtualRing", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern void SetVirtualRing(bool enable);
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetVirtualRingEnabled", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern bool GetVirtualRingEnabled();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "GetReferenceDeviceAngleDifference", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern QuaternionVector4 GetReferenceDeviceAngleDifference();
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "InitInternal", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern uint InitInternal(ref InfinadeckInitError inError);
+
+        [DllImportAttribute("InfinadeckAPI", EntryPoint = "DeInitInternal", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern uint DeInitInternal(ref InfinadeckInitError inError);
     }
 
 
@@ -145,11 +171,6 @@ namespace Infinadeck
         public static void InitConnection(ref InfinadeckInitError inError)
         {
             InfinadeckInterOp.InitInternal(ref inError);
-            if (inError != InfinadeckInitError.InfinadeckInitError_None)
-            {
-                InfinadeckInterOp.InitInternal(ref inError, true);
-                return;
-            }
             return;
         }
 
@@ -275,73 +296,52 @@ namespace Infinadeck
         {
             InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
             if (!CheckConnection()) InitConnection(ref e);
-            TreadmillInfoPayload info_payload = InfinadeckInterOp.GetTreadmillInfo();
-            return new TreadmillInfo(info_payload.id, info_payload.model_number, info_payload.dll_version);
+            TreadmillInfo info_payload;
+            InfinadeckInterOp.GetTreadmillInfo(out info_payload);
+            return info_payload;
 
         }
 
-        /**
-        * Sets the API lock, which can prevent external applications from making 
-        * changes to thre treadmill's state
-        *
-        * NOTE: Not currently implemented
-        */
-        public static bool GetAPILock()
+        public static void SetTreadmillPause(bool pause)
         {
             InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
             if (!CheckConnection()) InitConnection(ref e);
-            return InfinadeckInterOp.GetAPILock();
+            InfinadeckInterOp.SetTreadmillPause(pause);
         }
 
-        /**
-        * Checks whether the treadmill is in "Demo" mode
-        *
-        * NOTE: Not currently implemented
-        */
-        public static void SetAPILock(bool locked)
+        public static bool GetTreadmillPauseState()
         {
             InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
             if (!CheckConnection()) InitConnection(ref e);
-            InfinadeckInterOp.SetAPILock(locked);
+            return InfinadeckInterOp.GetTreadmillPauseState();
         }
 
-        /**
-        * Checks whether the treadmill is in "Demo" mode
-        *
-        * NOTE: Not currently implemented
-        */
-        public static bool GetDemoMode()
+        public static void SetVirtualRing(bool pause)
         {
             InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
             if (!CheckConnection()) InitConnection(ref e);
-            return InfinadeckInterOp.GetDemoMode();
+            InfinadeckInterOp.SetVirtualRing(pause);
         }
 
-        /**
-        * Gets the remaining demo time, if the treadmill is in "Demo" mode
-        *
-        * NOTE: Not currently implemented
-        */
-        public static double GetDemoTimeRemaining()
+        public static bool GetVirtualRingEnabled()
         {
             InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
             if (!CheckConnection()) InitConnection(ref e);
-            return InfinadeckInterOp.GetDemoTimeRemaining();
+            return InfinadeckInterOp.GetVirtualRingEnabled();
         }
 
+        public static QuaternionVector4 GetReferenceDeviceAngleDifference()
+        {
+            InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
+            if (!CheckConnection()) InitConnection(ref e);
+            return InfinadeckInterOp.GetReferenceDeviceAngleDifference();
+        }
         //Deprecated Functions
         public static void SetTreadmillRunState(bool run) //FLAGGED FOR DEPRECATION, may just need to be deleted outright, your call
         {
             InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
             if (!CheckConnection()) InitConnection(ref e);
             InfinadeckInterOp.SetTreadmillRunState(run);
-        }
-
-        public static void SetBrake(bool brake)
-        {
-            InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
-            if (!CheckConnection()) InitConnection(ref e);
-            InfinadeckInterOp.SetBrake(brake);
         }
 
         public static void StartTreadmillManualControl()
@@ -362,6 +362,16 @@ namespace Infinadeck
             InfinadeckInitError e = InfinadeckInitError.InfinadeckInitError_None;
             if (!CheckConnection()) InitConnection(ref e);
             InfinadeckInterOp.StopTreadmill();
+        }
+
+        public static UserPositionRotation GetUserPositionRotation()
+        {
+            return InfinadeckInterOp.GetUserPositionRotation();
+        }
+
+        public static DiagnosticInfo GetDiagnostics()
+        {
+            return InfinadeckInterOp.GetDiagnostics();
         }
     }
 }
